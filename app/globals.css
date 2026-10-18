@@ -222,6 +222,15 @@ h1 em { color: #ffd04a; font-style: normal; }
 .history-row strong { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .history-row small { margin-top: 5px; color: #7788a4; font-size: 12px; }
 .history-status { justify-self: end; white-space: nowrap; }
+@media (min-width: 721px) {
+  section#profile.profile-card { width: 100%; min-height: 0; }
+  section#profile.profile-card .profile-heading { gap: 22px; padding: 24px 30px 18px; }
+  section#profile.profile-card .profile-heading .profile-avatar { width: 82px; height: 82px; border-width: 6px; font-size: 28px; }
+  section#profile.profile-card .profile-heading h2 { margin-bottom: 5px; font-size: 27px; }
+  section#profile.profile-card .profile-heading > div > span { font-size: 16px; }
+  section#profile.profile-card .profile-heading > button { padding: 11px 18px; border-radius: 12px; font-size: 14px; }
+  section#profile.profile-card .profile-details { margin: 0 30px 20px 134px; padding-top: 14px; gap: 14px; font-size: 13px; }
+}
 .profile-heading { align-items: center; padding: 26px 28px 24px; }
 .profile-heading .profile-avatar { flex: 0 0 auto; width: 102px; height: 102px; border: 8px solid #151925; outline: 1px solid rgba(255,202,75,.42); box-shadow: 0 0 0 7px rgba(255,190,61,.12), 0 12px 30px rgba(255,183,54,.16); font-size: 31px; letter-spacing: -.05em; }
 .profile-heading > div { min-width: 0; flex: 1; }
