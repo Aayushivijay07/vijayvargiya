@@ -1,10 +1,14 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
   <defs>
-    <radialGradient id="gold" cx="35%" cy="30%" r="70%"><stop offset="0" stop-color="#fff4a8"/><stop offset=".35" stop-color="#ffd52f"/><stop offset=".72" stop-color="#d99400"/><stop offset="1" stop-color="#fff0a0"/></radialGradient>
+    <radialGradient id="gold" cx="35%" cy="25%" r="80%">
+      <stop offset="0" stop-color="#fff3a0"/>
+      <stop offset=".35" stop-color="#ffd23f"/>
+      <stop offset=".72" stop-color="#e5a900"/>
+      <stop offset="1" stop-color="#fff0a0"/>
+    </radialGradient>
   </defs>
-  <circle cx="128" cy="128" r="116" fill="url(#gold)"/>
-  <circle cx="128" cy="128" r="103" fill="#000" stroke="#f7c72e" stroke-width="3"/>
-  <circle cx="128" cy="128" r="82" fill="#000" stroke="#c99316" stroke-width="2"/>
-  <circle cx="128" cy="128" r="65" fill="#000" stroke="#86600f" stroke-width="1.5"/>
-  <path d="M80 76h35l13 25 13-25h35l-31 58v50h-34v-50z" fill="url(#gold)"/>
+  <circle cx="128" cy="128" r="98" fill="#000" stroke="url(#gold)" stroke-width="10"/>
+  <circle cx="128" cy="128" r="78" fill="#000" stroke="#dcae19" stroke-width="2"/>
+  <circle cx="128" cy="128" r="64" fill="none" stroke="#8d6b0d" stroke-width="1"/>
+  <path d="M78 76h25l25 61 25-61h25l-38 104h-24z" fill="url(#gold)"/>
 </svg>
