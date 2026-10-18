@@ -14,7 +14,7 @@ button { cursor: pointer; }
 .rewards-page { min-height: 100vh; overflow: hidden; background: radial-gradient(circle at 77% 56%, #211e16 0, #10100f 20%, #08090b 46%); }
 .site-header { height: 63px; padding: 0 max(32px, calc((100vw - 1560px) / 2)); border-bottom: 1px solid rgba(232, 177, 32, .27); display: flex; align-items: center; justify-content: space-between; gap: 0; background: #0b0d10; }
 .brand { display: flex; align-items: center; width: min(220px, 28vw); color: #ffc943; text-decoration: none; }
- .brand-reference-logo { display: block; width: 100%; height: auto; max-height: none; object-fit: contain; object-position: left center; }
+ .brand-reference-logo { display: block; width: 100%; height: auto; max-height: none; object-fit: contain; object-position: left center; mix-blend-mode: screen; }
 .brand-mark { width: 32px; height: 32px; border: 1.5px solid #f5c43f; border-radius: 50%; display: grid; place-items: center; position: relative; overflow: hidden; background: #090b0e; }
 .brand-mark:after { content: ''; position: absolute; inset: 3px; width: auto; height: auto; border: 1px solid #f5c43f; border-radius: 50%; background: transparent; transform: none; opacity: .9; }
 .brand-mark span { position: relative; z-index: 2; transform: none; color: #f5c43f; font: 500 20px/1 Georgia, serif; }
