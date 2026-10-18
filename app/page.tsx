@@ -324,7 +324,7 @@ export default function Page() {
 
       {showReviewPopup && (
         <div className="review-overlay">
-        <div className="review-popup" role="dialog" aria-modal="true" aria-labelledby="review-title">
+        <div className={`review-popup${fireworksActive ? ' fireworks-active' : ''}`} role="dialog" aria-modal="true" aria-labelledby="review-title">
         <div className="review-popup-content">
         <button className="review-close" onClick={finishReviewAndShowOffer} aria-label="Close review message"><X size={18} /></button>
  <h2 id="review-title">Namaste! Aapka Pyaar, Hamare 25 Saal Ke Safar Ki Sabse Badi Jeet!</h2>
