@@ -174,7 +174,9 @@ export default function Page() {
     const targetAngle = (360 - ((wheelRotation + winningIndex * 40 + 20) % 360)) % 360
     const targetRotation = wheelRotation + 1440 + targetAngle
     setIsSpinning(true)
-    setShowReviewPopup(false)
+    // Show the Namaste message immediately when the user taps Spin and keep it
+    // over the mystery box until they dismiss it or choose Rate Now.
+    setShowReviewPopup(true)
     setShowResultPopup(false)
     setLastWinningIndex(winningIndex)
     setSpinCount((count) => count + 1)
@@ -183,8 +185,7 @@ export default function Page() {
   window.setTimeout(() => {
     setIsSpinning(false)
     setSpinResult('Your Mystery Gift Box is ready')
-    // Keep the Mystery Gift Box covered until the Namaste message is acknowledged.
-    window.setTimeout(() => setShowReviewPopup(true), 2000)
+    // The Namaste message is already covering the wheel from the moment Spin is tapped.
   }, 4200)
   }
 
@@ -309,9 +310,6 @@ export default function Page() {
       {showReviewPopup && (
         <div className="review-overlay">
         <div className="review-popup" role="dialog" aria-modal="true" aria-labelledby="review-title">
-        <video className="celebration-video" autoPlay muted playsInline preload="auto" aria-hidden="true">
-          <source src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/20261018-1626-20.0243689-PaFLTwhZAbfYSI0AYxymQX79ILiW42.mp4" type="video/mp4" />
-        </video>
         <div className="review-popup-content">
         <button className="review-close" onClick={finishReviewAndShowOffer} aria-label="Close review message"><X size={18} /></button>
  <h2 id="review-title">Namaste! Aapka Pyaar, Hamare 25 Saal Ke Safar Ki Sabse Badi Jeet!</h2>
