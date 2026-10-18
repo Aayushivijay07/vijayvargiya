@@ -187,7 +187,22 @@ h1 em { color: #ffd04a; font-style: normal; }
 .dashboard-card.history-card, .dashboard-card.profile-card { overflow: hidden; }
 .history-card .card-heading, .profile-card .profile-heading { align-items: center; }
 .history-card .card-heading h2, .profile-card .profile-heading h2 { margin-top: 2px; }
-.history-list { margin-top: 22px; border-top: 1px solid #252b39; }
+.history-card { overflow: hidden; border: 1px solid #28344a; border-radius: 22px; background: linear-gradient(115deg, #111a29 0%, #0d1421 58%, #101a2a 100%); box-shadow: 0 18px 44px rgba(0, 0, 0, .24); }
+.history-card .card-heading { align-items: flex-start; }
+.history-card .card-heading h2 { margin-top: 26px; font-size: 28px; }
+.history-card .card-heading a { display: flex; align-items: center; gap: 10px; color: #ffca4b; font-size: 18px; font-weight: 700; text-decoration: underline; }
+.history-card .card-heading a svg { width: 25px; height: 25px; }
+.history-list { margin-top: 14px; padding: 0 38px 34px; border-top: 0; }
+.history-row { display: grid; grid-template-columns: 160px minmax(0, 1fr) auto; align-items: center; gap: 28px; padding: 0; }
+.history-row { display: grid !important; grid-template-columns: 160px minmax(0, 1fr) auto !important; align-items: center !important; gap: 28px !important; }
+.history-row > div { min-width: 0; }
+.history-row strong { display: block; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.history-row small { display: inline-flex !important; width: fit-content; }
+.history-gift { width: 160px; height: 160px; border: 2px solid #9d741c; border-radius: 22px; color: #ffca4b; background: rgba(132, 91, 14, .2); box-shadow: 0 0 30px rgba(255, 190, 50, .14); }
+.history-gift svg { width: 64px; height: 64px; }
+.history-row strong { font-size: 28px; }
+.history-row small { margin-top: 12px; padding: 11px 18px; border: 1px solid #805f21; border-radius: 999px; color: #ffca4b; background: rgba(128, 91, 23, .32); font-size: 16px; font-weight: 700; }
+.history-status { align-self: end; margin-bottom: 4px; padding: 10px 18px; border: 1px solid #09654f; border-radius: 999px; color: #42f2ad; background: rgba(0, 117, 81, .25); font-size: 17px; font-weight: 700; }
 .history-row { display: grid; grid-template-columns: 44px minmax(0, 1fr) auto; align-items: center; gap: 14px; padding: 16px 0; border-top: 0; }
 .history-row + .history-row { border-top: 1px solid #252b39; }
 .history-row > div { min-width: 0; }
