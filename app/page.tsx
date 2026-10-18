@@ -193,7 +193,8 @@ export default function Page() {
     <main className="rewards-page">
       <header className="site-header">
         <a className="brand" href="#top" aria-label="Vijayavargiya Electronics home">
-          <span className="brand-reference-logo" aria-label="Vijayavargiya Electronics"><strong>VIJAYAVARGIYA</strong><small>ELECTRONICS</small></span>
+          <BrandMark />
+          <span className="brand-copy"><strong>VIJAYAVARGIYA</strong><small>ELECTRONICS</small></span>
         </a>
         <nav aria-label="Primary navigation">
           <a href="#prizes">Grand Prizes</a>
@@ -246,7 +247,7 @@ export default function Page() {
           <p className="prizes-intro">Win a draw entry on the Referral Rewards Wheel. A draw entry is a chance to win the appliance in the campaign draw — it is not a guaranteed win. Campaign: 2026-07-01 to 2026-09-30.</p>
           <div className="prize-grid">
             <article className="prize-card"><div className="prize-image"><img src="/images/prize-led-tv.png" alt="Smart LED television in a modern living room" /><span>♜ LED TV GRAND PRIZE</span></div><div className="prize-copy"><h3>55&quot; Ultra HD Smart 4K LED TV</h3><p>Suggested eligibility: qualifying purchase of ₹49,999+ gives a draw entry via the Referral Rewards Wheel. Winner selected in the campaign draw.</p></div></article>
-            <article className="prize-card"><div className="prize-image"><img src="/images/prize-washing-machine.png" alt="Front-load washing machine in a bright utility room" /><span>♜ WASHING MACHINE GRAND PRIZE</span></div><div className="prize-copy"><h3>Front-Load Smart Inverter Washing Machine</h3><p>Suggested eligibility: qualifying purchase of ₹29,999+ gives a draw entry via the Referral Rewards Wheel. Winner selected in the campaign draw.</p></div></article>
+            <article className="prize-card"><div className="prize-image"><img src="/images/prize-washing-machine.png" alt="Front-load washing machine in a bright utility room" /><span>♜ WASHING MACHINE GRAND PRIZE</span></div><div className="prize-copy"><h3>Front-Load Smart Inverter Washing Machine</h3><p>Suggested eligibility: qualifying purchase of ���29,999+ gives a draw entry via the Referral Rewards Wheel. Winner selected in the campaign draw.</p></div></article>
             <article className="prize-card"><div className="prize-image"><img src="/images/prize-ac.png" alt="White split air conditioner close-up" /><span>♜ FREE AC GRAND PRIZE</span></div><div className="prize-copy"><h3>1.5 Ton 5-Star Dual Inverter Air Conditioner</h3><p>Suggested eligibility: qualifying purchase of ₹59,999+ gives a draw entry via the Referral Rewards Wheel. Winner selected in the campaign draw.</p></div></article>
           </div>
         </div>
