@@ -151,6 +151,33 @@ export default function Page() {
     document.getElementById('prizes')?.scrollIntoView({ behavior: 'smooth', block: 'center' })
   }
 
+  function playCrackerSound() {
+    const AudioContextClass = window.AudioContext || (window as typeof window & { webkitAudioContext?: typeof AudioContext }).webkitAudioContext
+    if (!AudioContextClass) return
+    const audioContext = new AudioContextClass()
+    const duration = 0.42
+    const buffer = audioContext.createBuffer(1, audioContext.sampleRate * duration, audioContext.sampleRate)
+    const data = buffer.getChannelData(0)
+    for (let index = 0; index < data.length; index += 1) {
+      const envelope = Math.max(0, 1 - index / data.length)
+      data[index] = (Math.random() * 2 - 1) * envelope * envelope
+    }
+    const noise = audioContext.createBufferSource()
+    const filter = audioContext.createBiquadFilter()
+    const gain = audioContext.createGain()
+    noise.buffer = buffer
+    filter.type = 'bandpass'
+    filter.frequency.value = 1650
+    filter.Q.value = 0.8
+    gain.gain.setValueAtTime(0.001, audioContext.currentTime)
+    gain.gain.exponentialRampToValueAtTime(0.8, audioContext.currentTime + 0.015)
+    gain.gain.exponentialRampToValueAtTime(0.001, audioContext.currentTime + duration)
+    noise.connect(filter).connect(gain).connect(audioContext.destination)
+    noise.start()
+    noise.stop(audioContext.currentTime + duration)
+    window.setTimeout(() => void audioContext.close(), 700)
+  }
+
   function spinWheel() {
     if (!isRegistered) {
       setShowNotice(true)
@@ -184,8 +211,9 @@ export default function Page() {
     setSpinResult('The wheel is spinning')
     setWheelRotation(targetRotation)
   window.setTimeout(() => {
-    setIsSpinning(false)
-    setSpinResult('Your Mystery Gift Box is ready')
+  playCrackerSound()
+  setIsSpinning(false)
+  setSpinResult('Your Mystery Gift Box is ready')
     // The Namaste message is already covering the wheel from the moment Spin is tapped.
   }, 4200)
   }
