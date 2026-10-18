@@ -321,6 +321,6 @@ h1 em { color: #ffd04a; font-style: normal; }
   section#history.history-card .history-row strong { font-size: 18px; }
   section#history.history-card .history-row small { margin-top: 5px; padding: 6px 10px; font-size: 11px; }
   section#history.history-card .history-status { padding: 6px 10px; font-size: 12px; }
-  section#history.history-card { width: 100%; max-width: none; height: 220px; margin-bottom: 20px; padding: 0; font-weight: 700; box-sizing: border-box; }
+  section#history.history-card { width: 100%; max-width: none; height: 220px; margin-top: 28px; margin-bottom: 20px; padding: 0; font-weight: 700; box-sizing: border-box; clear: both; }
   section#profile.profile-card { width: 100%; max-width: none; margin-top: 20px; padding-top: 0; }
   }
