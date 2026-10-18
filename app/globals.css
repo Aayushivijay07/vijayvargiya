@@ -52,7 +52,9 @@ h1 em { color: #ffd04a; font-style: normal; }
 .wheel-labels { position: absolute; inset: 0; z-index: 3; border-radius: 50%; }
 .wheel-labels span { position: absolute; top: 50%; left: 50%; width: clamp(78px, 8.2vw, 116px); margin-left: clamp(-58px, -4.1vw, -39px); margin-top: clamp(-32px, -2.4vw, -24px); display: grid; justify-items: center; gap: clamp(3px, .35vw, 6px); text-align: center; font-size: clamp(8px, .78vw, 12px); line-height: 1.05; font-weight: 800; letter-spacing: .035em; text-shadow: 0 1px 8px #05080e; }
 .wheel-labels span img { width: clamp(40px, 4.3vw, 66px); height: clamp(30px, 3.4vw, 52px); object-fit: contain; image-rendering: auto; filter: saturate(1.08) contrast(1.08) drop-shadow(0 2px 5px rgba(0,0,0,.48)); mix-blend-mode: multiply; }
-  .wheel-labels span:nth-child(9) img { width: clamp(52px, 5.6vw, 84px); height: clamp(46px, 5vw, 74px); object-fit: contain; background: transparent; mix-blend-mode: multiply; filter: saturate(1.12) contrast(1.06) drop-shadow(0 3px 6px rgba(0,0,0,.55)); }
+  .wheel-labels span:nth-child(9) img { width: clamp(52px, 5.6vw, 84px); height: clamp(46px, 5vw, 74px); object-fit: contain; background: transparent; mix-blend-mode: multiply; filter: saturate(1.12) contrast(1.06) drop-shadow(0 3px 6px rgba(0,0,0,.55)); transform: translateY(8px); }
+  .wheel-labels span:nth-child(8) img { transform: translateY(4px); }
+  .wheel-labels span:nth-child(7) img { transform: translateY(2px); }
   .wheel-labels b { max-width: 100%; overflow-wrap: anywhere; }
 .wheel-labels b { display: grid; gap: 1px; }
 @media (min-width: 721px) {
