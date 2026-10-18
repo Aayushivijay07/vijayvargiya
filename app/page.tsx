@@ -4,15 +4,15 @@ import { useEffect, useRef, useState } from 'react'
 import { ArrowRight, Copy, Gift, LayoutDashboard, Link2, Mail, MessageCircle, Monitor, MoreHorizontal, Send, Share2, Sparkles, Ticket, Users, X } from 'lucide-react'
 
 const slices = [
-  { label: 'HEADPHONES', color: '#18243d', text: '#f6d77a', image: '/images/wheel-headphones.png' },
-  { label: 'MIXER\nGRINDER', color: '#263a58', text: '#fff', image: '/images/wheel-mixer-grinder.png' },
-  { label: 'AIR\nCONDITIONER', color: '#123f52', text: '#d8f3ff', image: '/images/wheel-air-conditioner.png' },
-  { label: 'REFRIGERATOR', color: '#1b2938', text: '#fff', image: '/images/wheel-refrigerator.png' },
-  { label: 'WASHING\nMACHINE', color: '#34425a', text: '#fff0bc', image: '/images/wheel-washing-machine.png' },
-  { label: 'ELECTRIC\nIRON', color: '#203d5c', text: '#fff', image: '/images/wheel-electric-iron.png' },
-  { label: 'BLUETOOTH\nSPEAKER', color: '#172d46', text: '#d8f3ff', image: '/images/wheel-bluetooth-speaker.png' },
-  { label: 'LED\nTV', color: '#27324a', text: '#ffe7a0', image: '/images/wheel-led-television.png' },
-  { label: 'MYSTERY\nGIFT BOX', color: '#6f4d12', text: '#fff4c4', image: '/images/wheel-mystery-gift.png' },
+  { label: 'HEADPHONES', color: '#18243d', text: '#f6d77a', image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-Q5YCTnh8vdaQ8Uq7R8MmCYqGIEfTzV.png' },
+  { label: 'MIXER\nGRINDER', color: '#263a58', text: '#fff', image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-zCPzlaBXQBH6jeUvx3ouPYtS8MQ32j.png' },
+  { label: 'AIR\nCONDITIONER', color: '#123f52', text: '#d8f3ff', image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-dHY5yk3jvMTkV67M4MdHk5kgLfJeOD.png' },
+  { label: 'REFRIGERATOR', color: '#1b2938', text: '#fff', image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-T0FiD0VHsFgO8FagJTUb3Ieh9lcSJi.png' },
+  { label: 'WASHING\nMACHINE', color: '#34425a', text: '#fff0bc', image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-L7RCVaOVxycZaxrm3kmdATKzGugrhN.png' },
+  { label: 'ELECTRIC\nIRON', color: '#203d5c', text: '#fff', image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-NbjGQtdLcKeURAlIBAlnYaOCH1ylCf.png' },
+  { label: 'BLUETOOTH\nSPEAKER', color: '#172d46', text: '#d8f3ff', image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-UVTo11cAsh3VN93kdOY2Ne5i0VZpcO.png' },
+  { label: 'LED\nTV', color: '#27324a', text: '#ffe7a0', image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-MjN9YCU7k2Aw3CtH15qtK4YdTjmuAk.png' },
+  { label: 'MYSTERY\nGIFT BOX', color: '#6f4d12', text: '#fff4c4', image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-KcoV73E6OgqX0I5wn1Lp8sid5OjxgH.png' },
 ]
 
 function BrandMark() {
