@@ -181,9 +181,10 @@ export default function Page() {
     setSpinResult('The wheel is spinning')
     setWheelRotation(targetRotation)
   window.setTimeout(() => {
-  setIsSpinning(false)
-  setShowReviewPopup(true)
-  setSpinResult('Your Mystery Gift Box is ready')
+    setIsSpinning(false)
+    setSpinResult('Your Mystery Gift Box is ready')
+    // Keep the Mystery Gift Box covered until the Namaste message is acknowledged.
+    window.setTimeout(() => setShowReviewPopup(true), 2000)
   }, 4200)
   }
 
@@ -308,7 +309,7 @@ export default function Page() {
       {showReviewPopup && (
         <div className="review-overlay">
         <div className="review-popup" role="dialog" aria-modal="true" aria-labelledby="review-title">
-        <button className="review-close" onClick={() => setShowReviewPopup(false)} aria-label="Close review message"><X size={18} /></button>
+        <button className="review-close" onClick={finishReviewAndShowOffer} aria-label="Close review message"><X size={18} /></button>
  <h2 id="review-title">Namaste! Aapka Pyaar, Hamare 25 Saal Ke Safar Ki Sabse Badi Jeet!</h2>
  <p className="review-intro-message">25 saal ka yeh safar sirf hamare business ka nahi, balki aapke bharose, pyaar aur apnepan ki ek khoobsurat kahani hai.</p>
  <p className="review-rating-message">Is khaas mauke par, hum chahte hain ki hamari khushiyon mein aap bhi shaamil hon! Apna feedback dekar hamare 25 Years Celebration ka hissa banein!</p>
