@@ -7,9 +7,9 @@ export const metadata: Metadata = {
   description: 'Discover exclusive shopping coupons, electronics rewards, and premium grand prizes from Vijayavargiya Electronics.',
   generator: 'v0.app',
   icons: {
-    icon: '/favicon.png',
-    shortcut: '/favicon.png',
-    apple: '/favicon.png',
+    icon: '/favicon.svg',
+    shortcut: '/favicon.svg',
+    apple: '/favicon.svg',
   },
 }
 
