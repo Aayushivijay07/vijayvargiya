@@ -202,6 +202,28 @@ h1 em { color: #ffd04a; font-style: normal; }
   section#profile.profile-card .profile-heading > button { padding: 7px 8px; font-size: 10px; }
   section#profile.profile-card .profile-details { gap: 9px; margin: 0; padding-top: 10px; font-size: 10px; }
   section#profile.profile-card .profile-details strong { margin-top: 3px; }
+  article#rewards.reward-card { width: 100%; min-height: 0; padding: 12px; }
+  article#rewards.reward-card .card-heading { gap: 8px; }
+  article#rewards.reward-card .card-heading h2 { font-size: 17px; }
+  article#rewards.reward-card .dashboard-kicker { margin-bottom: 4px; font-size: 9px; }
+  article#rewards.reward-card .live-pill { padding: 4px 7px; font-size: 9px; }
+  article#rewards.reward-card .reward-highlight { gap: 8px; margin-top: 10px; padding: 9px; }
+  article#rewards.reward-card .reward-gift { width: 38px; height: 38px; }
+  article#rewards.reward-card .reward-gift svg { width: 19px; height: 19px; }
+  article#rewards.reward-card .reward-highlight strong { font-size: 13px; }
+  article#rewards.reward-card .reward-highlight span { font-size: 9px; }
+  article#rewards.reward-card .reward-highlight button { width: 24px; height: 24px; }
+  article#rewards.reward-card .coupon-code { gap: 6px; margin-top: 8px; padding: 7px 9px; font-size: 9px; }
+  article#rewards.reward-card .coupon-code strong { font-size: 11px; }
+  article#rewards.reward-card .coupon-code button { width: 22px; height: 22px; }
+  article#referrals.referral-card { width: 100%; min-height: 0; padding: 12px; }
+  article#referrals.referral-card .card-heading h2 { font-size: 17px; }
+  article#referrals.referral-card .card-description { margin: 8px 0; font-size: 10px; line-height: 1.35; }
+  article#referrals.referral-card .progress-row { margin-top: 8px; font-size: 10px; }
+  article#referrals.referral-card .referral-link { gap: 5px; margin-top: 8px; padding: 7px; font-size: 8px; }
+  article#referrals.referral-card .referral-link span { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  article#referrals.referral-card .referral-link button { padding: 4px 6px; font-size: 9px; }
+  article#referrals.referral-card .share-referral-button { margin-top: 8px; padding: 8px 10px; font-size: 10px; }
   .review-overlay { padding: 12px; } .review-popup { max-height: calc(100vh - 24px); padding: 32px 24px 28px; border-radius: 18px; } .review-popup h2 { font-size: 34px; } .review-popup p { font-size: 19px; line-height: 1.6; } .hero { width: 100%; max-width: 100%; min-height: auto; padding: 58px 16px 28px; display: flex; flex-direction: column; gap: 34px; overflow: hidden; }
 .site-header { height: auto; min-height: 63px; width: 100%; padding: 10px 16px; gap: 10px; }
 .brand { min-width: 0; width: min(236px, 58vw); }.brand-reference-logo { max-height: 40px; }.site-header .login-button, .site-header .dashboard-header-link { flex: 0 0 auto; padding: 10px 12px; font-size: 12px; }
