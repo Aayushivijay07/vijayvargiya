@@ -301,7 +301,6 @@ export default function Page() {
     <div className={`coupon-popup${fireworksActive ? ' fireworks-active' : ''}`} role="dialog" aria-modal="true" aria-labelledby="coupon-title">
       <button className="review-close" onClick={() => setShowCouponPopup(false)} aria-label="Close coupon offer"><X size={18} /></button>
       <div className="coupon-brand">VIJAYAVARGIYA ELECTRONICS</div>
-      <div className="coupon-ribbon" aria-hidden="true"><span>25 YEARS</span></div>
 <div className="coupon-gift-art"><img src="/images/wheel-mystery-gift.png" alt="Mystery gift box" /></div>
   <h2 id="coupon-title">CONGRATULATIONS!</h2>
   <p className="coupon-unlocked">YOU UNLOCKED A MYSTERY REWARD!</p>
