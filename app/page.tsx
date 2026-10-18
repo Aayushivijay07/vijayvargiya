@@ -201,7 +201,7 @@ export default function Page() {
           <a href="#refer" onClick={(event) => { event.preventDefault(); document.getElementById('refer')?.scrollIntoView({ behavior: 'smooth', block: 'center' }) }}>Refer &amp; Win</a>
           <a href="#terms">Terms</a>
         </nav>
-        {isRegistered ? <a className="dashboard-header-link" href={`/dashboard?name=${encodeURIComponent(customerName)}&mobile=${encodeURIComponent(mobileNumber)}`} aria-label="Open customer dashboard"><LayoutDashboard /> <span>Dashboard</span></a> : <button className="login-button" onClick={() => setShowNotice(true)}>Login / Register</button>}
+        {isRegistered ? <a className="dashboard-header-link" href={`/dashboard?name=${encodeURIComponent(customerName)}&mobile=${encodeURIComponent(mobileNumber)}&reward=${encodeURIComponent(selectedCoupon ? 'Mystery Gift Box' : '')}&coupon=${encodeURIComponent(selectedCoupon)}&spins=${spinCount}&referrals=${referralCount}`} aria-label="Open customer dashboard"><LayoutDashboard /> <span>Dashboard</span></a> : <button className="login-button" onClick={() => setShowNotice(true)}>Login / Register</button>}
       </header>
 
       <section className="hero" id="top">
@@ -345,9 +345,10 @@ export default function Page() {
         <form onSubmit={async (event) => {
     event.preventDefault()
     const name = customerName.trim()
-    const mobile = mobileNumber.trim()
-    if (!name || !/^[0-9]{10}$/.test(mobile)) return
+    const mobile = mobileNumber.replace(/\D/g, '').slice(0, 10)
+    if (!name || mobile.length !== 10) return
 
+    setMobileNumber(mobile)
     setIsRegistered(true)
     setShowNotice(false)
     setSpinResult(`Welcome ${name}! Your free spin is unlocked.`)

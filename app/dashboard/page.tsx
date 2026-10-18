@@ -21,14 +21,16 @@ function DashboardContent() {
   const [editedName, setEditedName] = useState('')
   const [editedMobile, setEditedMobile] = useState('')
   const [profileMessage, setProfileMessage] = useState('')
-  const [referralCount, setReferralCount] = useState(0)
-  const referralTarget = 5
-  const referralPercent = Math.round((referralCount / referralTarget) * 100)
   const customerName = searchParams.get('name') || 'Customer'
   const customerMobile = searchParams.get('mobile') || 'Mobile number not provided'
   const rewardName = searchParams.get('reward') || ''
   const rewardCoupon = searchParams.get('coupon') || ''
-  const hasReward = Boolean(rewardName)
+  const hasReward = Boolean(rewardName && rewardCoupon)
+  const spinTotal = Math.max(Number(searchParams.get('spins') || 0), hasReward ? 1 : 0)
+  const savedReferralCount = Math.max(Number(searchParams.get('referrals') || 0), 0)
+  const [referralCount, setReferralCount] = useState(savedReferralCount)
+  const referralTarget = 5
+  const referralPercent = Math.round((referralCount / referralTarget) * 100)
   const firstName = customerName.trim().split(/\s+/)[0] || 'Customer'
   const initials = customerName.trim().split(/\s+/).map((part) => part[0]).join('').slice(0, 2).toUpperCase() || 'C'
   const referralCode = firstName.toUpperCase().replace(/[^A-Z0-9]/g, '').slice(0, 8) || 'CUSTOMER'
@@ -146,9 +148,9 @@ function DashboardContent() {
         </header>
 
         <div className="dashboard-stats">
-          <article><span className="stat-icon gold"><Trophy /></span><div><small>Total rewards</small><strong>03</strong></div></article>
+          <article><span className="stat-icon gold"><Trophy /></span><div><small>Total rewards</small><strong>{String(spinTotal).padStart(2, '0')}</strong></div></article>
           <article><span className="stat-icon purple"><Gift /></span><div><small>Available coupon</small><strong>01</strong></div></article>
-          <article><span className="stat-icon blue"><Share2 /></span><div><small>Successful referrals</small><strong>02</strong></div></article>
+          <article><span className="stat-icon blue"><Share2 /></span><div><small>Successful referrals</small><strong>{String(savedReferralCount).padStart(2, '0')}</strong></div></article>
         </div>
 
         <div className="dashboard-grid">
