@@ -158,7 +158,7 @@ export default function Page() {
     window.setTimeout(() => {
       fireworksAudio.pause()
       fireworksAudio.currentTime = 0
-    }, 3000)
+    }, 6000)
   }
 
   function spinWheel() {
