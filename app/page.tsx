@@ -9,8 +9,8 @@ const slices = [
   { label: 'AIR\nCONDITIONER', color: '#123f52', text: '#d8f3ff', image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-dHY5yk3jvMTkV67M4MdHk5kgLfJeOD.png' },
   { label: 'REFRIGERATOR', color: '#1b2938', text: '#fff', image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-T0FiD0VHsFgO8FagJTUb3Ieh9lcSJi.png' },
   { label: 'WASHING\nMACHINE', color: '#34425a', text: '#fff0bc', image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-L7RCVaOVxycZaxrm3kmdATKzGugrhN.png' },
-  { label: 'ELECTRIC\nIRON', color: '#203d5c', text: '#fff', image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-NbjGQtdLcKeURAlIBAlnYaOCH1ylCf.png' },
-  { label: 'BLUETOOTH\nSPEAKER', color: '#172d46', text: '#d8f3ff', image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-UVTo11cAsh3VN93kdOY2Ne5i0VZpcO.png' },
+  { label: 'IRON', color: '#203d5c', text: '#fff', image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-NbjGQtdLcKeURAlIBAlnYaOCH1ylCf.png' },
+  { label: 'SPEAKER', color: '#172d46', text: '#d8f3ff', image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-UVTo11cAsh3VN93kdOY2Ne5i0VZpcO.png' },
   { label: 'LED\nTV', color: '#27324a', text: '#ffe7a0', image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-MjN9YCU7k2Aw3CtH15qtK4YdTjmuAk.png' },
   { label: 'MYSTERY\nGIFT BOX', color: '#6f4d12', text: '#fff4c4', image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-KcoV73E6OgqX0I5wn1Lp8sid5OjxgH.png' },
 ]
@@ -48,7 +48,7 @@ function PrizeWheel({ rotation, onSpin, isSpinning }: { rotation: number; onSpin
           </div>
         ))}
         <div className="wheel-labels" aria-hidden="true">
-          {slices.map((slice, index) => <span className="wheel-label" key={slice.label} style={{ transform: `rotate(${index * 40 + 20}deg) translateY(max(-175px, -33vw)) rotate(${-(index * 40 + 20)}deg)`, color: slice.text }}><img src={slice.image} alt="" /><b>{slice.label.split('\n').map((line) => <span key={line}>{line}</span>)}</b></span>)}
+          {slices.map((slice, index) => <span className="wheel-label" key={slice.label} style={{ transform: `rotate(${index * 40 + 20}deg) translateY(max(-155px, -30vw)) rotate(${-(index * 40 + 20)}deg)`, color: slice.text }}><img src={slice.image} alt="" /><b>{slice.label.split('\n').map((line) => <span key={line}>{line}</span>)}</b></span>)}
         </div>
         <div className="wheel-center" style={{ transform: `rotate(${45 - rotation}deg)` }}><strong style={{ display: 'inline-block', transform: `rotate(${rotation - 45}deg)` }}>VE</strong></div>
       </div>
