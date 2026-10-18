@@ -55,6 +55,9 @@ h1 em { color: #ffd04a; font-style: normal; }
   .wheel-labels span:nth-child(9) img { width: clamp(52px, 5.6vw, 84px); height: clamp(46px, 5vw, 74px); object-fit: contain; background: transparent; mix-blend-mode: multiply; filter: saturate(1.12) contrast(1.06) drop-shadow(0 3px 6px rgba(0,0,0,.55)); }
   .wheel-labels b { max-width: 100%; overflow-wrap: anywhere; }
 .wheel-labels b { display: grid; gap: 1px; }
+@media (min-width: 721px) {
+  .wheel-labels span:nth-child(9) img { width: clamp(44px, 4.8vw, 72px); height: clamp(38px, 4.2vw, 62px); }
+}
 .wheel-center { position: absolute; z-index: 4; width: 22%; aspect-ratio: 1; left: 39%; top: 39%; border: 3px solid #171717; border-radius: 50%; background: #ffc94f; display: grid; place-items: center; color: #111; transform: rotate(45deg); font-size: 30px; }
 .wheel-center strong { display: block; font-family: Georgia, serif; font-size: clamp(22px, 3vw, 34px); font-weight: 900; letter-spacing: -.08em; transform: none; }
 .reward-tag { position: absolute; z-index: 5; display: flex; align-items: center; gap: 10px; padding: 14px 19px; border: 1px solid #725714; border-radius: 15px; background: #11151f; color: #ffd34e; font-weight: 700; font-size: 14px; }
