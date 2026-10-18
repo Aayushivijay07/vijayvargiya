@@ -26,8 +26,9 @@ function DashboardContent() {
   const referralPercent = Math.round((referralCount / referralTarget) * 100)
   const customerName = searchParams.get('name') || 'Customer'
   const customerMobile = searchParams.get('mobile') || 'Mobile number not provided'
-  const rewardName = searchParams.get('reward') || '25% OFF Coupon'
-  const rewardCoupon = searchParams.get('coupon') || 'VE-RAHUL-25'
+  const rewardName = searchParams.get('reward') || ''
+  const rewardCoupon = searchParams.get('coupon') || ''
+  const hasReward = Boolean(rewardName)
   const firstName = customerName.trim().split(/\s+/)[0] || 'Customer'
   const initials = customerName.trim().split(/\s+/).map((part) => part[0]).join('').slice(0, 2).toUpperCase() || 'C'
   const referralCode = firstName.toUpperCase().replace(/[^A-Z0-9]/g, '').slice(0, 8) || 'CUSTOMER'
@@ -68,6 +69,13 @@ function DashboardContent() {
     } catch {
       setProfileMessage('Could not save right now. Please try again.')
     }
+  }
+
+  async function copyCoupon() {
+    if (!rewardCoupon) return
+    await navigator.clipboard?.writeText(rewardCoupon)
+    setCopied(true)
+    window.setTimeout(() => setCopied(false), 1800)
   }
 
   async function copyReferralMessage() {
@@ -145,9 +153,11 @@ function DashboardContent() {
 
         <div className="dashboard-grid">
           <article className="dashboard-card reward-card" id="rewards">
-            <div className="card-heading"><div><p className="dashboard-kicker">LATEST WIN</p><h2>Your reward is ready</h2></div><span className="live-pill">ACTIVE</span></div>
-            <div className="reward-highlight"><div className="reward-gift"><Gift /></div><div><strong>{rewardName}</strong><span>Customer&apos;s latest wheel reward</span></div><button aria-label="View reward"><ArrowUpRight /></button></div>
-            <div className="coupon-code"><span>Coupon code</span><strong>{rewardCoupon}</strong><button onClick={copyLink} aria-label="Copy coupon code"><Copy /></button></div>
+            <div className="card-heading"><div><p className="dashboard-kicker">LATEST WIN</p><h2>{hasReward ? 'Your reward is ready' : 'Nothing won yet'}</h2></div>{hasReward && <span className="live-pill">ACTIVE</span>}</div>
+            {hasReward ? <>
+              <div className="reward-highlight"><div className="reward-gift"><Gift /></div><div><strong>{rewardName}</strong><span>Customer&apos;s latest wheel reward</span></div><button aria-label="View reward"><ArrowUpRight /></button></div>
+              <div className="coupon-code"><span>Coupon code</span><strong>{rewardCoupon || 'Not available'}</strong><button onClick={copyCoupon} aria-label="Copy coupon code" disabled={!rewardCoupon}><Copy /></button></div>
+            </> : <p className="card-description">Spin the wheel to win a reward. Your winning gift and coupon code will appear here.</p>}
           </article>
 
           <article className="dashboard-card referral-card" id="referrals">
@@ -162,7 +172,7 @@ function DashboardContent() {
 
         <section className="dashboard-card history-card" id="history">
           <div className="card-heading"><div><p className="dashboard-kicker">ACTIVITY</p><h2>Spin history</h2></div><a href="#history">View all <ArrowUpRight /></a></div>
-          <div className="history-list">{[{ reward: rewardName, date: 'Latest spin', status: 'Claimed' }, ...spins.filter((spin) => spin.reward !== rewardName)].map((spin) => <div className="history-row" key={`${spin.reward}-${spin.date}`}><span className="history-gift"><Gift /></span><div><strong>{spin.reward}</strong><small>{spin.date}</small></div><span className={`history-status ${spin.status.toLowerCase()}`}>{spin.status}</span></div>)}</div>
+          <div className="history-list">{hasReward ? <div className="history-row" key={`${rewardName}-latest`}><span className="history-gift"><Gift /></span><div><strong>{rewardName}</strong><small>Latest spin</small></div><span className="history-status claimed">Claimed</span></div> : <div className="history-empty"><Gift /><strong>No spins yet</strong><span>Your won rewards will appear here after you spin the wheel.</span></div>}</div>
         </section>
 
         <section className="dashboard-card profile-card" id="profile">
