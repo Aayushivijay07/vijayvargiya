@@ -294,7 +294,8 @@ export default function Page() {
   <div className="coupon-code"><span>Your Exclusive Coupon</span><strong>{selectedCoupon || 'VE15-OFF'}</strong><button onClick={async () => { await navigator.clipboard?.writeText(selectedCoupon || 'VE15-OFF'); setCouponCopied(true); window.setTimeout(() => setCouponCopied(false), 1800) }}>{couponCopied ? 'Copied' : 'Copy'}</button></div>
   <p className="coupon-terms"><b>Maximum discount:</b> ₹1,000<br /><b>Minimum purchase:</b> ₹3,999<br /><b>Applicable products:</b> Eligible electronic appliances only.</p>
   <p className="coupon-conditions">The 15% discount is capped at ₹1,000. Redeem once after validation. Cannot be combined with other offers unless permitted. Campaign terms apply.</p>
-  <button className="primary-action review-action" onClick={() => setShowCouponPopup(false)}>CLAIM YOUR COUPON <ArrowRight size={18} /></button>
+  <a className="primary-action review-action coupon-claim-link" href="https://share.google/b7pcfXz9ZVC9BtnxQ" target="_blank" rel="noreferrer" onClick={() => setShowCouponPopup(false)}>CLAIM YOUR COUPON <ArrowRight size={18} /></a>
+  <span className="coupon-store-note">Visit store to claim</span>
     </div>
   </div>}
 
