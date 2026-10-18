@@ -104,6 +104,7 @@ export default function Page() {
     }
   }, [])
 
+  const googleSheetWebAppUrl = 'https://script.google.com/macros/s/AKfycbwIx8d0nkp0QSOSmQp54Ztm_04Qg10jztTJoMy6ujlW-3Fiiv-oGeLATMMczUIDEHkWAw/exec'
   const homeReferralUrl = typeof window === 'undefined' ? 'https://vijayavargiya.in/?ref=REWARDS25' : `${window.location.origin}/?ref=REWARDS25`
   const homePromotionalMessage = `SPIN & WIN at Vijayavargiya Electronics! Register using my referral link and get a FREE SPIN. Win exciting coupons, gifts and grand prizes like LED TV, Washing Machine and FREE AC. Register now and try your luck: ${homeReferralUrl}`
 
@@ -341,7 +342,27 @@ export default function Page() {
         <Gift size={28} />
         <h2 id="register-title">Register before you spin</h2>
         <p>Create your free account to unlock Wheel 1 and claim your reward.</p>
-        <form onSubmit={(event) => { event.preventDefault(); setIsRegistered(true); setShowNotice(false); setSpinResult(`Welcome ${customerName || 'customer'}! Your free spin is unlocked.`) }}>
+        <form onSubmit={async (event) => {
+    event.preventDefault()
+    const name = customerName.trim()
+    const mobile = mobileNumber.trim()
+    if (!name || !/^[0-9]{10}$/.test(mobile)) return
+
+    setIsRegistered(true)
+    setShowNotice(false)
+    setSpinResult(`Welcome ${name}! Your free spin is unlocked.`)
+
+    try {
+      await fetch(googleSheetWebAppUrl, {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+        body: JSON.stringify({ name, mobile, registeredAt: new Date().toISOString() }),
+      })
+    } catch {
+      // Registration stays unlocked; the Apps Script request can be retried by the user.
+    }
+  }}>
           <label htmlFor="customer-name">Full name</label>
           <input id="customer-name" value={customerName} onChange={(event) => setCustomerName(event.target.value)} placeholder="Enter your name" required />
           <label htmlFor="customer-mobile">Mobile number</label>
