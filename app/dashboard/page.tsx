@@ -82,7 +82,7 @@ function DashboardContent() {
   return (
     <main className="dashboard-page">
       <aside className={`dashboard-sidebar ${menuOpen ? 'is-open' : ''}`}>
-        <div className="dashboard-logo"><img src="/images/vijayavargiya-logo-transparent.png" alt="Vijayavargiya Electronics" /></div>
+        <div className="dashboard-logo"><span className="dashboard-brand-logo" aria-label="Vijayavargiya Electronics"><strong>VIJAYAVARGIYA</strong><small>ELECTRONICS</small></span></div>
         <button className="dashboard-close" onClick={() => setMenuOpen(false)} aria-label="Close menu"><X /></button>
         <nav className="dashboard-nav" aria-label="Dashboard navigation">
           <a className="active" href="#overview"><Sparkles /> Overview</a>

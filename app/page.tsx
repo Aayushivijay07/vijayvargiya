@@ -193,7 +193,7 @@ export default function Page() {
     <main className="rewards-page">
       <header className="site-header">
         <a className="brand" href="#top" aria-label="Vijayavargiya Electronics home">
-          <img className="brand-reference-logo" src="/images/vijayavargiya-logo-transparent.png" alt="Vijayavargiya Electronics" />
+          <span className="brand-reference-logo" aria-label="Vijayavargiya Electronics"><strong>VIJAYAVARGIYA</strong><small>ELECTRONICS</small></span>
         </a>
         <nav aria-label="Primary navigation">
           <a href="#prizes">Grand Prizes</a>
