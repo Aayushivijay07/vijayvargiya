@@ -203,6 +203,18 @@ h1 em { color: #ffd04a; font-style: normal; }
 .history-row strong { font-size: 28px; }
 .history-row small { margin-top: 12px; padding: 11px 18px; border: 1px solid #805f21; border-radius: 999px; color: #ffca4b; background: rgba(128, 91, 23, .32); font-size: 16px; font-weight: 700; }
 .history-status { align-self: end; margin-bottom: 4px; padding: 10px 18px; border: 1px solid #09654f; border-radius: 999px; color: #42f2ad; background: rgba(0, 117, 81, .25); font-size: 17px; font-weight: 700; }
+@media (min-width: 721px) {
+  section#history.history-card { width: 100%; min-height: 0; }
+  section#history.history-card .card-heading { padding: 24px 30px 0; }
+  section#history.history-card .card-heading h2 { margin-top: 16px; font-size: 24px; }
+  section#history.history-card .history-list { margin-top: 10px; padding: 0 30px 22px; }
+  section#history.history-card .history-row { grid-template-columns: 112px minmax(0, 1fr) auto !important; gap: 22px !important; }
+  section#history.history-card .history-gift { width: 112px; height: 112px; border-radius: 18px; }
+  section#history.history-card .history-gift svg { width: 48px; height: 48px; }
+  section#history.history-card .history-row strong { font-size: 23px; }
+  section#history.history-card .history-row small { margin-top: 8px; padding: 8px 13px; font-size: 13px; }
+  section#history.history-card .history-status { padding: 8px 14px; font-size: 14px; }
+}
 .history-row { display: grid; grid-template-columns: 44px minmax(0, 1fr) auto; align-items: center; gap: 14px; padding: 16px 0; border-top: 0; }
 .history-row + .history-row { border-top: 1px solid #252b39; }
 .history-row > div { min-width: 0; }
