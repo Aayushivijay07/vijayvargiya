@@ -12,9 +12,9 @@ button, a { font: inherit; }
 button { cursor: pointer; }
 
 .rewards-page { min-height: 100vh; overflow: hidden; background: radial-gradient(circle at 77% 56%, #211e16 0, #10100f 20%, #08090b 46%); }
-.site-header { height: 63px; padding: 0 max(32px, calc((100vw - 1560px) / 2)); border-bottom: 1px solid rgba(232, 177, 32, .27); display: flex; align-items: center; justify-content: space-between; gap: 0; background: #0b0d10; }
-.brand { display: flex; align-items: center; width: min(220px, 28vw); color: #ffc943; text-decoration: none; }
- .brand-reference-logo { display: block; width: 100%; height: auto; max-height: none; object-fit: contain; object-position: left center; mix-blend-mode: screen; }
+.site-header { height: 63px; padding: 0 max(32px, calc((100vw - 1560px) / 2)); border-bottom: 1px solid rgba(232, 177, 32, .27); display: flex; align-items: center; justify-content: space-between; gap: 0; background: #000; }
+.brand { display: flex; align-items: center; width: min(260px, 30vw); color: #ffc943; text-decoration: none; transform: translateX(10px); }
+ .brand-reference-logo { display: block; width: 100%; height: auto; max-height: none; object-fit: contain; object-position: left center; mix-blend-mode: lighten; transform: scale(1.8); transform-origin: left center; }
 .brand-mark { width: 32px; height: 32px; border: 1.5px solid #f5c43f; border-radius: 50%; display: grid; place-items: center; position: relative; overflow: hidden; background: #090b0e; }
 .brand-mark:after { content: ''; position: absolute; inset: 3px; width: auto; height: auto; border: 1px solid #f5c43f; border-radius: 50%; background: transparent; transform: none; opacity: .9; }
 .brand-mark span { position: relative; z-index: 2; transform: none; color: #f5c43f; font: 500 20px/1 Georgia, serif; }
@@ -175,7 +175,7 @@ h1 em { color: #ffd04a; font-style: normal; }
   @media (max-width: 720px) {
   .site-header { padding-left: 14px; padding-right: 14px; gap: 8px; }
   .site-header .brand { width: 145px; max-width: 145px; flex: 0 1 145px; overflow: hidden; }
-  .site-header .brand-reference-logo { width: 145px; height: 36px; max-height: 36px; transform: scale(6) translateX(-12px); transform-origin: left center; object-fit: contain; object-position: left center; }
+  .site-header .brand-reference-logo { width: 145px; height: 36px; max-height: 36px; transform: scale(6) translateX(-12px); transform-origin: left center; object-fit: contain; object-position: left center; mix-blend-mode: lighten; }
   .wheel-labels span img { width: 28px; height: 21px; object-fit: contain; background: transparent; mix-blend-mode: multiply; filter: saturate(1.05) contrast(1.08) drop-shadow(0 1px 3px rgba(0,0,0,.5)); }
   .wheel-labels span:nth-child(9) img { width: 38px; height: 31px; background: transparent; mix-blend-mode: multiply; filter: saturate(1.08) contrast(1.08) drop-shadow(0 1px 3px rgba(0,0,0,.55)); }
   .review-overlay { padding: 8px; }.review-popup { width: min(100%, 314px); max-height: calc(100vh - 16px); padding: 24px 18px 18px; border-radius: 16px; }.review-popup h2 { margin-bottom: 8px; font-size: 18px; line-height: 1.12; }.review-popup p { margin-bottom: 7px; }.review-popup .review-rating-message, .review-popup .review-intro-message, .review-popup .review-thank-you { font-size: 14px; line-height: 1.32; }.review-popup p:last-of-type { margin-bottom: 10px; }.review-popup .review-action { min-height: 42px; padding-inline: 18px; font-size: 14px; }.review-close { top: 8px; right: 8px; width: 28px; height: 28px; }
