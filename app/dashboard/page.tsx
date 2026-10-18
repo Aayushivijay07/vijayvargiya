@@ -2,7 +2,7 @@
 
 import { useSearchParams } from 'next/navigation'
 import { Suspense, useState } from 'react'
-import { ArrowUpRight, Copy, Gift, History, Link2, LogOut, Mail, Menu, MessageCircle, MoreHorizontal, Send, Share2, Sparkles, Trophy, UserRound, X } from 'lucide-react'
+import { ArrowUpRight, Copy, Gift, History, Link2, LogOut, Mail, Menu, MessageCircle, MoreHorizontal, Pencil, Send, Share2, Sparkles, Trophy, UserRound, X } from 'lucide-react'
 
 const spins = [
   { reward: '25% OFF Coupon', date: 'Today, 10:42 AM', status: 'Claimed' },
@@ -17,11 +17,17 @@ function DashboardContent() {
   const [shareMessage, setShareMessage] = useState('')
   const [shareOpen, setShareOpen] = useState(false)
   const [shareDraft, setShareDraft] = useState('')
+  const [profileEditOpen, setProfileEditOpen] = useState(false)
+  const [editedName, setEditedName] = useState('')
+  const [editedMobile, setEditedMobile] = useState('')
+  const [profileMessage, setProfileMessage] = useState('')
   const [referralCount, setReferralCount] = useState(0)
   const referralTarget = 5
   const referralPercent = Math.round((referralCount / referralTarget) * 100)
   const customerName = searchParams.get('name') || 'Customer'
   const customerMobile = searchParams.get('mobile') || 'Mobile number not provided'
+  const rewardName = searchParams.get('reward') || '25% OFF Coupon'
+  const rewardCoupon = searchParams.get('coupon') || 'VE-RAHUL-25'
   const firstName = customerName.trim().split(/\s+/)[0] || 'Customer'
   const initials = customerName.trim().split(/\s+/).map((part) => part[0]).join('').slice(0, 2).toUpperCase() || 'C'
   const referralCode = firstName.toUpperCase().replace(/[^A-Z0-9]/g, '').slice(0, 8) || 'CUSTOMER'
@@ -34,6 +40,34 @@ function DashboardContent() {
   function openSharePopup() {
     setShareDraft(promotionalMessage)
     setShareOpen(true)
+  }
+
+  function openProfileEditor() {
+    setEditedName(customerName === 'Customer' ? '' : customerName)
+    setEditedMobile(customerMobile === 'Mobile number not provided' ? '' : customerMobile)
+    setProfileEditOpen(true)
+  }
+
+  async function saveProfile(event: React.FormEvent<HTMLFormElement>) {
+    event.preventDefault()
+    const name = editedName.trim()
+    const mobile = editedMobile.replace(/\D/g, '').slice(0, 10)
+    if (name.length < 2 || mobile.length !== 10) {
+      setProfileMessage('Please enter a valid name and 10-digit mobile number.')
+      return
+    }
+    try {
+      await fetch('https://script.google.com/macros/s/AKfycbwIx8d0nkp0QSOSmQp54Ztm_04Qg10jztTJoMy6ujlW-3Fiiv-oGeLATMMczUIDEHkWAw/exec', {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+        body: JSON.stringify({ action: 'update', name, mobile, previousName: customerName, previousMobile: customerMobile }),
+      })
+      setProfileMessage('Profile updated. Your Google Sheet will be updated.')
+      setProfileEditOpen(false)
+    } catch {
+      setProfileMessage('Could not save right now. Please try again.')
+    }
   }
 
   async function copyReferralMessage() {
@@ -112,8 +146,8 @@ function DashboardContent() {
         <div className="dashboard-grid">
           <article className="dashboard-card reward-card" id="rewards">
             <div className="card-heading"><div><p className="dashboard-kicker">LATEST WIN</p><h2>Your reward is ready</h2></div><span className="live-pill">ACTIVE</span></div>
-            <div className="reward-highlight"><div className="reward-gift"><Gift /></div><div><strong>25% OFF</strong><span>Electronics purchase coupon</span></div><button aria-label="View reward"><ArrowUpRight /></button></div>
-            <div className="coupon-code"><span>Coupon code</span><strong>VE-RAHUL-25</strong><button onClick={copyLink} aria-label="Copy coupon code"><Copy /></button></div>
+            <div className="reward-highlight"><div className="reward-gift"><Gift /></div><div><strong>{rewardName}</strong><span>Customer&apos;s latest wheel reward</span></div><button aria-label="View reward"><ArrowUpRight /></button></div>
+            <div className="coupon-code"><span>Coupon code</span><strong>{rewardCoupon}</strong><button onClick={copyLink} aria-label="Copy coupon code"><Copy /></button></div>
           </article>
 
           <article className="dashboard-card referral-card" id="referrals">
@@ -128,14 +162,22 @@ function DashboardContent() {
 
         <section className="dashboard-card history-card" id="history">
           <div className="card-heading"><div><p className="dashboard-kicker">ACTIVITY</p><h2>Spin history</h2></div><a href="#history">View all <ArrowUpRight /></a></div>
-          <div className="history-list">{spins.map((spin) => <div className="history-row" key={`${spin.reward}-${spin.date}`}><span className="history-gift"><Gift /></span><div><strong>{spin.reward}</strong><small>{spin.date}</small></div><span className={`history-status ${spin.status.toLowerCase()}`}>{spin.status}</span></div>)}</div>
+          <div className="history-list">{[{ reward: rewardName, date: 'Latest spin', status: 'Claimed' }, ...spins.filter((spin) => spin.reward !== rewardName)].map((spin) => <div className="history-row" key={`${spin.reward}-${spin.date}`}><span className="history-gift"><Gift /></span><div><strong>{spin.reward}</strong><small>{spin.date}</small></div><span className={`history-status ${spin.status.toLowerCase()}`}>{spin.status}</span></div>)}</div>
         </section>
 
         <section className="dashboard-card profile-card" id="profile">
-          <div className="profile-heading"><span className="profile-avatar">{initials}</span><div><p className="dashboard-kicker">REGISTERED CUSTOMER</p><h2>{customerName}</h2><span>{customerMobile}</span></div><button>Edit profile</button></div>
+          <div className="profile-heading"><span className="profile-avatar">{initials}</span><div><p className="dashboard-kicker">REGISTERED CUSTOMER</p><h2>{customerName}</h2><span>{customerMobile}</span></div><button onClick={openProfileEditor}><Pencil /> Edit profile</button></div>
           <div className="profile-details"><span>Member since <strong>September 2026</strong></span><span>Registration status <strong className="verified">Verified</strong></span></div>
         </section>
       </section>
+      {profileMessage && <p className="profile-save-message" role="status">{profileMessage}</p>}
+      {profileEditOpen && <div className="share-overlay" role="presentation" onClick={() => setProfileEditOpen(false)}>
+        <section className="profile-edit-modal" role="dialog" aria-modal="true" aria-labelledby="profile-edit-title" onClick={(event) => event.stopPropagation()}>
+          <button className="share-close" onClick={() => setProfileEditOpen(false)} aria-label="Close profile editor"><X /></button>
+          <p className="dashboard-kicker">PROFILE SETTINGS</p><h2 id="profile-edit-title">Update your details</h2><p>Changes are saved to your registration record.</p>
+          <form onSubmit={saveProfile} className="profile-edit-form"><label htmlFor="profile-name">Full name</label><input id="profile-name" value={editedName} onChange={(event) => setEditedName(event.target.value)} required /><label htmlFor="profile-mobile">Mobile number</label><input id="profile-mobile" inputMode="numeric" maxLength={10} value={editedMobile} onChange={(event) => setEditedMobile(event.target.value.replace(/\\D/g, ''))} required /><button className="share-referral-button" type="submit">Save changes</button></form>
+        </section>
+      </div>}
       {shareOpen && <div className="share-overlay" role="presentation" onClick={() => setShareOpen(false)}>
         <section className="share-modal" role="dialog" aria-modal="true" aria-labelledby="share-title" onClick={(event) => event.stopPropagation()}>
           <button className="share-close" onClick={() => setShareOpen(false)} aria-label="Close sharing popup"><X /></button>
