@@ -3,8 +3,8 @@ import type { Metadata, Viewport } from 'next'
 import './globals.css'
 
 export const metadata: Metadata = {
-  title: 'Vijayavargiya Electronics Rewards',
-  description: 'Discover exclusive shopping coupons, electronics rewards, and premium grand prizes from Vijayavargiya Electronics.',
+  title: 'Vijayvargiya Electronics Rewards',
+  description: 'Discover exclusive shopping coupons, electronics rewards, and premium grand prizes from Vijayvargiya Electronics.',
   generator: 'v0.app',
   icons: {
     icon: '/favicon.svg',

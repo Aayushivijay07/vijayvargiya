@@ -17,7 +17,7 @@ const slices = [
 
 function BrandMark() {
   return (
-  <div className="brand-mark" aria-label="Vijayavargiya Electronics">
+  <div className="brand-mark" aria-label="Vijayvargiya Electronics">
   <span>V</span>
   <i aria-hidden="true" />
   </div>
@@ -107,7 +107,7 @@ export default function Page() {
 
   const googleSheetWebAppUrl = 'https://script.google.com/macros/s/AKfycbwIx8d0nkp0QSOSmQp54Ztm_04Qg10jztTJoMy6ujlW-3Fiiv-oGeLATMMczUIDEHkWAw/exec'
   const homeReferralUrl = typeof window === 'undefined' ? 'https://vijayavargiya.in/?ref=REWARDS25' : `${window.location.origin}/?ref=REWARDS25`
-  const homePromotionalMessage = `SPIN & WIN at Vijayavargiya Electronics! Register using my referral link and get a FREE SPIN. Win exciting coupons, gifts and grand prizes like LED TV, Washing Machine and FREE AC. Register now and try your luck: ${homeReferralUrl}`
+  const homePromotionalMessage = `SPIN & WIN at Vijayvargiya Electronics! Register using my referral link and get a FREE SPIN. Win exciting coupons, gifts and grand prizes like LED TV, Washing Machine and FREE AC. Register now and try your luck: ${homeReferralUrl}`
 
   function recordReferral() {
     setReferralCount((count) => Math.min(count + 1, 5))
@@ -122,7 +122,7 @@ export default function Page() {
   function shareHomeTo(channel: 'whatsapp' | 'facebook' | 'telegram' | 'sms' | 'email') {
     const message = encodeURIComponent(homeShareDraft || homePromotionalMessage)
     const url = encodeURIComponent(homeReferralUrl)
-    const links = { whatsapp: `https://wa.me/?text=${message}`, facebook: `https://www.facebook.com/sharer/sharer.php?u=${url}`, telegram: `https://t.me/share/url?url=${url}&text=${message}`, sms: `sms:?&body=${message}`, email: `mailto:?subject=${encodeURIComponent('SPIN & WIN - Vijayavargiya Electronics')}&body=${message}` }
+    const links = { whatsapp: `https://wa.me/?text=${message}`, facebook: `https://www.facebook.com/sharer/sharer.php?u=${url}`, telegram: `https://t.me/share/url?url=${url}&text=${message}`, sms: `sms:?&body=${message}`, email: `mailto:?subject=${encodeURIComponent('SPIN & WIN - Vijayvargiya Electronics')}&body=${message}` }
     window.open(links[channel], '_blank', 'noopener,noreferrer')
   }
 
@@ -134,7 +134,7 @@ export default function Page() {
 
   async function nativeHomeShare() {
     if (navigator.share) {
-      await navigator.share({ title: 'SPIN & WIN - Vijayavargiya Electronics', text: homeShareDraft || homePromotionalMessage, url: homeReferralUrl })
+      await navigator.share({ title: 'SPIN & WIN - Vijayvargiya Electronics', text: homeShareDraft || homePromotionalMessage, url: homeReferralUrl })
       return
     }
     await copyHomeShare()
@@ -207,8 +207,8 @@ export default function Page() {
   return (
     <main className="rewards-page">
       <header className="site-header">
-        <a className="brand" href="#top" aria-label="Vijayavargiya Electronics home">
-          <img className="brand-reference-logo" src="/images/vijayavargiya-logo-transparent.png" alt="Vijayavargiya Electronics" />
+        <a className="brand" href="#top" aria-label="Vijayvargiya Electronics home">
+          <img className="brand-reference-logo" src="/images/vijayavargiya-logo-transparent.png" alt="Vijayvargiya Electronics" />
         </a>
         <nav aria-label="Primary navigation">
           <a href="#prizes">Grand Prizes</a>
@@ -220,9 +220,9 @@ export default function Page() {
 
       <section className="hero" id="top">
         <div className="hero-copy">
-          <div className="eyebrow"><Sparkles size={15} /> VIJAYAVARGIYA ELECTRONICS REWARDS</div>
+          <div className="eyebrow"><Sparkles size={15} /> VIJAYVARGIYA ELECTRONICS REWARDS</div>
           <h1><span>SPIN.</span><em>WIN.</em><span>SHOP</span><span>SMARTER!</span></h1>
-          <p>Discover exclusive shopping coupons, exciting electronics rewards,<br className="desktop-break" /> and premium grand prizes from Vijayavargiya Electronics.</p>
+          <p>Discover exclusive shopping coupons, exciting electronics rewards,<br className="desktop-break" /> and premium grand prizes from Vijayvargiya Electronics.</p>
           <div className="hero-actions">
             <button className="primary-action" onClick={() => { if (window.matchMedia('(min-width: 721px)').matches) spinWheel(); else focusPrizeWheel() }} disabled={isSpinning} aria-label={isSpinning ? 'Wheel is spinning' : 'Spin the prize wheel'}>{isSpinning ? 'Spinning…' : 'Spin Now'} <ArrowRight size={20} /></button>
             <button type="button" className="secondary-action" onClick={() => { recordReferral(); setHomeShareDraft(homePromotionalMessage); setHomeShareOpen(true) }} aria-haspopup="dialog" aria-controls="home-share-title"><Users size={20} /> Refer &amp; Win</button>
@@ -287,7 +287,7 @@ export default function Page() {
       <footer className="campaign-footer">
         <div className="footer-content">
           <div className="footer-brand">
-            <h2>VIJAYAVARGIYA ELECTRONICS</h2>
+            <h2>VIJAYVARGIYA ELECTRONICS</h2>
             <p>Promotional rewards campaign. All prizes subject to terms,<br />availability and verification. Draw entries are chances to win — not<br />guaranteed prizes.</p>
           </div>
           <nav className="footer-links" aria-label="Footer navigation">
@@ -300,7 +300,7 @@ export default function Page() {
       {showCouponPopup && <div className="review-overlay coupon-overlay">
     <div className={`coupon-popup${fireworksActive ? ' fireworks-active' : ''}`} role="dialog" aria-modal="true" aria-labelledby="coupon-title">
       <button className="review-close" onClick={() => setShowCouponPopup(false)} aria-label="Close coupon offer"><X size={18} /></button>
-      <div className="coupon-brand">VIJAYAVARGIYA ELECTRONICS</div>
+      <div className="coupon-brand">VIJAYVARGIYA ELECTRONICS</div>
 <div className="coupon-gift-art"><img src="/images/wheel-mystery-gift.png" alt="Mystery gift box" /></div>
   <h2 id="coupon-title">CONGRATULATIONS!</h2>
   <p className="coupon-unlocked">YOU UNLOCKED A MYSTERY REWARD!</p>
@@ -342,7 +342,7 @@ export default function Page() {
       {homeShareOpen && <div className="share-overlay" role="presentation" onClick={() => setHomeShareOpen(false)}>
         <section className="share-modal" role="dialog" aria-modal="true" aria-labelledby="home-share-title" onClick={(event) => event.stopPropagation()}>
           <button className="share-close" onClick={() => setHomeShareOpen(false)} aria-label="Close sharing popup"><X /></button>
-          <div className="share-banner"><p>VIJAYAVARGIYA ELECTRONICS</p><h2 id="home-share-title">SPIN &amp; WIN!</h2><strong>Exciting Rewards Are Waiting for You!</strong><span>Get a FREE SPIN and unlock your chance to win exciting coupons, gifts, and grand prizes.</span><div><b>LED TV</b><b>Washing Machine</b><b>FREE AC</b></div></div>
+          <div className="share-banner"><p>VIJAYVARGIYA ELECTRONICS</p><h2 id="home-share-title">SPIN &amp; WIN!</h2><strong>Exciting Rewards Are Waiting for You!</strong><span>Get a FREE SPIN and unlock your chance to win exciting coupons, gifts, and grand prizes.</span><div><b>LED TV</b><b>Washing Machine</b><b>FREE AC</b></div></div>
           <label className="share-label" htmlFor="home-share-message">Your share message</label>
           <textarea id="home-share-message" value={homeShareDraft} onChange={(event) => setHomeShareDraft(event.target.value)} />
           <div className="share-actions"><button onClick={() => shareHomeTo('whatsapp')}><MessageCircle /> WhatsApp</button><button onClick={() => shareHomeTo('facebook')}><Share2 /> Facebook</button><button onClick={() => shareHomeTo('telegram')}><Send /> Telegram</button><button onClick={() => shareHomeTo('sms')}><MessageCircle /> SMS</button><button onClick={() => shareHomeTo('email')}><Mail /> Email</button><button onClick={nativeHomeShare}><MoreHorizontal /> More options</button></div>

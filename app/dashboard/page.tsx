@@ -36,7 +36,7 @@ function DashboardContent() {
   const referralCode = firstName.toUpperCase().replace(/[^A-Z0-9]/g, '').slice(0, 8) || 'CUSTOMER'
   const referralUrl = `https://vijayavargiya.in/?ref=${encodeURIComponent(referralCode + '25')}`
   const referralLink = referralUrl
-  const promotionalMessage = `SPIN & WIN at Vijayavargiya Electronics! 🎁\n\n🔥 Register using my referral link and get a FREE SPIN! 🎡\n\n🎁 Win exciting coupons, amazing gifts & GRAND PRIZES like 📺 LED TV, 🧺 Washing Machine & ❄️ FREE AC!\n\n😍 Don’t miss your chance to win big! Share the excitement with your friends and family! 🎊\n\n👇 REGISTER NOW & TRY YOUR LUCK! 🍀\n🔗 ${referralUrl}`
+  const promotionalMessage = `SPIN & WIN at Vijayvargiya Electronics! 🎁\n\n🔥 Register using my referral link and get a FREE SPIN! 🎡\n\n🎁 Win exciting coupons, amazing gifts & GRAND PRIZES like 📺 LED TV, 🧺 Washing Machine & ❄️ FREE AC!\n\n😍 Don’t miss your chance to win big! Share the excitement with your friends and family! 🎊\n\n👇 REGISTER NOW & TRY YOUR LUCK! 🍀\n🔗 ${referralUrl}`
   const shareText = promotionalMessage
 
   function openSharePopup() {
@@ -87,7 +87,7 @@ function DashboardContent() {
 
   async function nativeShare() {
     if (navigator.share) {
-      await navigator.share({ title: 'SPIN & WIN - Vijayavargiya Electronics', text: shareDraft || promotionalMessage, url: referralUrl })
+      await navigator.share({ title: 'SPIN & WIN - Vijayvargiya Electronics', text: shareDraft || promotionalMessage, url: referralUrl })
       return
     }
     await copyLink()
@@ -101,7 +101,7 @@ function DashboardContent() {
       facebook: `https://www.facebook.com/sharer/sharer.php?u=${url}`,
       telegram: `https://t.me/share/url?url=${url}&text=${message}`,
       sms: `sms:?&body=${message}`,
-      email: `mailto:?subject=${encodeURIComponent('SPIN & WIN - Vijayavargiya Electronics')}&body=${message}`,
+      email: `mailto:?subject=${encodeURIComponent('SPIN & WIN - Vijayvargiya Electronics')}&body=${message}`,
     }
     window.open(links[channel], '_blank', 'noopener,noreferrer')
   }
@@ -114,7 +114,7 @@ function DashboardContent() {
 
   async function shareReferral() {
     if (navigator.share) {
-      await navigator.share({ title: 'Vijayavargiya Electronics Rewards', text: shareText, url: referralUrl })
+      await navigator.share({ title: 'Vijayvargiya Electronics Rewards', text: shareText, url: referralUrl })
       return
     }
     await copyLink()
@@ -125,7 +125,7 @@ function DashboardContent() {
   return (
     <main className="dashboard-page">
       <aside className={`dashboard-sidebar ${menuOpen ? 'is-open' : ''}`}>
-        <div className="dashboard-logo"><span className="dashboard-brand-logo" aria-label="Vijayavargiya Electronics"><strong>VIJAYAVARGIYA</strong><small>ELECTRONICS</small></span></div>
+        <div className="dashboard-logo"><span className="dashboard-brand-logo" aria-label="Vijayvargiya Electronics"><strong>VIJAYVARGIYA</strong><small>ELECTRONICS</small></span></div>
         <button className="dashboard-close" onClick={() => setMenuOpen(false)} aria-label="Close menu"><X /></button>
         <nav className="dashboard-nav" aria-label="Dashboard navigation">
           <a className="active" href="#overview"><Sparkles /> Overview</a>
@@ -192,7 +192,7 @@ function DashboardContent() {
       {shareOpen && <div className="share-overlay" role="presentation" onClick={() => setShareOpen(false)}>
         <section className="share-modal" role="dialog" aria-modal="true" aria-labelledby="share-title" onClick={(event) => event.stopPropagation()}>
           <button className="share-close" onClick={() => setShareOpen(false)} aria-label="Close sharing popup"><X /></button>
-          <div className="share-banner"><p>VIJAYAVARGIYA ELECTRONICS</p><h2 id="share-title">SPIN &amp; WIN!</h2><strong>Exciting Rewards Are Waiting for You!</strong><span>Get a FREE SPIN and unlock your chance to win exciting coupons, gifts, and grand prizes.</span><div><b>LED TV</b><b>Washing Machine</b><b>FREE AC</b></div></div>
+          <div className="share-banner"><p>VIJAYVARGIYA ELECTRONICS</p><h2 id="share-title">SPIN &amp; WIN!</h2><strong>Exciting Rewards Are Waiting for You!</strong><span>Get a FREE SPIN and unlock your chance to win exciting coupons, gifts, and grand prizes.</span><div><b>LED TV</b><b>Washing Machine</b><b>FREE AC</b></div></div>
           <label className="share-label" htmlFor="share-message">Your share message</label>
           <textarea id="share-message" value={shareDraft} onChange={(event) => setShareDraft(event.target.value)} />
           <div className="share-actions"><button onClick={() => shareTo('whatsapp')}><MessageCircle /> WhatsApp</button><button onClick={() => shareTo('facebook')}><Share2 /> Facebook</button><button onClick={() => shareTo('telegram')}><Send /> Telegram</button><button onClick={() => shareTo('sms')}><MessageCircle /> SMS</button><button onClick={() => shareTo('email')}><Mail /> Email</button><button onClick={nativeShare}><MoreHorizontal /> More options</button></div>
