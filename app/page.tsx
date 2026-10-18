@@ -141,11 +141,14 @@ export default function Page() {
   }
 
   function finishReviewAndShowOffer() {
-    reviewTabOpened.current = false
-    reviewPageWasHidden.current = false
-    reviewPageLostFocus.current = false
-    setShowReviewPopup(false)
-    setShowCouponPopup(true)
+  reviewTabOpened.current = false
+  reviewPageWasHidden.current = false
+  reviewPageLostFocus.current = false
+  setShowReviewPopup(false)
+  setFireworksActive(true)
+  playCrackerSound()
+  window.setTimeout(() => setFireworksActive(false), 6000)
+  setShowCouponPopup(true)
   }
 
   function focusPrizeWheel() {
@@ -195,9 +198,6 @@ export default function Page() {
     setSpinResult('The wheel is spinning')
     setWheelRotation(targetRotation)
   window.setTimeout(() => {
-  playCrackerSound()
-  setFireworksActive(true)
-  window.setTimeout(() => setFireworksActive(false), 6000)
   setIsSpinning(false)
   setSpinResult('Your Mystery Gift Box is ready')
     // The Namaste message is already covering the wheel from the moment Spin is tapped.
@@ -298,9 +298,10 @@ export default function Page() {
       </footer>
 
       {showCouponPopup && <div className="review-overlay coupon-overlay">
-    <div className="coupon-popup" role="dialog" aria-modal="true" aria-labelledby="coupon-title">
+    <div className={`coupon-popup${fireworksActive ? ' fireworks-active' : ''}`} role="dialog" aria-modal="true" aria-labelledby="coupon-title">
       <button className="review-close" onClick={() => setShowCouponPopup(false)} aria-label="Close coupon offer"><X size={18} /></button>
       <div className="coupon-brand">VIJAYAVARGIYA ELECTRONICS</div>
+      <div className="coupon-ribbon" aria-hidden="true"><span>25 YEARS</span></div>
 <div className="coupon-gift-art"><img src="/images/wheel-mystery-gift.png" alt="Mystery gift box" /></div>
   <h2 id="coupon-title">CONGRATULATIONS!</h2>
   <p className="coupon-unlocked">YOU UNLOCKED A MYSTERY REWARD!</p>

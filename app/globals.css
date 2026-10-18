@@ -137,6 +137,14 @@ h1 em { color: #ffd04a; font-style: normal; }
 .result-popup .review-badge { margin: 0 auto 14px; }
 .winning-prize { margin: 18px 0 12px; padding: 16px 18px; border: 1px solid rgba(242,189,60,.55); border-radius: 14px; background: rgba(242,189,60,.1); color: #ffd45c; font-size: 21px; font-weight: 800; }
 .result-note { font-size: 14px !important; }
+.coupon-ribbon { position: absolute; top: 18px; left: -38px; width: 150px; padding: 6px 0; transform: rotate(-35deg); color: #241400; background: linear-gradient(90deg, #e7a62f, #ffe17a, #e7a62f); box-shadow: 0 3px 12px rgba(0,0,0,.35); font-size: 10px; font-weight: 900; letter-spacing: .14em; text-align: center; }
+.coupon-ribbon::before, .coupon-ribbon::after { content: ''; position: absolute; bottom: -8px; border-style: solid; border-width: 8px 8px 0 0; border-color: #9b6416 transparent transparent transparent; }
+.coupon-ribbon::before { left: 0; }.coupon-ribbon::after { right: 0; transform: scaleX(-1); }
+.coupon-ribbon span { display: block; }
+.coupon-popup.fireworks-active { overflow: hidden; background: linear-gradient(145deg, rgba(31,24,56,.97), rgba(9,18,48,.98)); }
+.coupon-popup.fireworks-active::before { content: ''; position: absolute; z-index: 0; inset: 0; pointer-events: none; background: radial-gradient(circle at 18% 22%, #ff4fae 0 2px, transparent 3px), radial-gradient(circle at 78% 24%, #43ddff 0 2px, transparent 3px), radial-gradient(circle at 50% 76%, #ffe04e 0 2px, transparent 3px), repeating-conic-gradient(from 0deg at 18% 22%, transparent 0 8deg, rgba(255,79,174,.8) 9deg 10deg, transparent 11deg 24deg), repeating-conic-gradient(from 30deg at 78% 24%, transparent 0 8deg, rgba(67,221,255,.8) 9deg 10deg, transparent 11deg 24deg), repeating-conic-gradient(from 100deg at 50% 76%, transparent 0 8deg, rgba(255,224,78,.8) 9deg 10deg, transparent 11deg 24deg); animation: couponFireworks 6s ease-out forwards; }
+.coupon-popup.fireworks-active > * { position: relative; z-index: 1; }
+@keyframes couponFireworks { 0% { opacity: 0; transform: scale(.5); } 15% { opacity: 1; } 70% { opacity: .75; } 100% { opacity: .18; transform: scale(1.1); } }
 .coupon-gift-art { display: grid; place-items: center; height: 82px; }.coupon-gift-art img { width: 96px; height: 76px; object-fit: contain; filter: drop-shadow(0 0 18px rgba(255,201,79,.45)); }.coupon-store-note { display: block; margin-top: 5px; color: #8e9ab0; font-size: 10px; line-height: 1.2; text-align: center; }
 .coupon-claim-link { text-decoration: none; }
 .coupon-conditions { color: #899ab5; font-size: 11px; line-height: 1.4; }
