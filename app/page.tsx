@@ -70,6 +70,7 @@ export default function Page() {
   const [showReviewPopup, setShowReviewPopup] = useState(false)
   const [showResultPopup, setShowResultPopup] = useState(false)
   const [showCouponPopup, setShowCouponPopup] = useState(false)
+  const [fireworksActive, setFireworksActive] = useState(false)
   const [couponCopied, setCouponCopied] = useState(false)
   const [selectedCoupon, setSelectedCoupon] = useState('')
   const [lastWinningIndex, setLastWinningIndex] = useState<number | null>(null)
@@ -195,6 +196,8 @@ export default function Page() {
     setWheelRotation(targetRotation)
   window.setTimeout(() => {
   playCrackerSound()
+  setFireworksActive(true)
+  window.setTimeout(() => setFireworksActive(false), 6000)
   setIsSpinning(false)
   setSpinResult('Your Mystery Gift Box is ready')
     // The Namaste message is already covering the wheel from the moment Spin is tapped.
@@ -310,7 +313,7 @@ export default function Page() {
     </div>
   </div>}
 
-  {showResultPopup && lastWinningIndex !== null && <div className="review-popup result-popup" role="dialog" aria-modal="true" aria-labelledby="result-title">
+  {showResultPopup && lastWinningIndex !== null && <div className={`review-popup result-popup${fireworksActive ? ' fireworks-active' : ''}`} role="dialog" aria-modal="true" aria-labelledby="result-title">
         <button className="review-close" onClick={() => setShowResultPopup(false)} aria-label="Close winning result"><X size={18} /></button>
         <div className="review-badge">WIN</div>
         <h2 id="result-title">Congratulations!</h2>
