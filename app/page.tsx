@@ -173,7 +173,7 @@ export default function Page() {
   const coupon = ['VE15-OFF', 'ELECTRO15', 'VIJAY15'][Math.floor(Math.random() * 3)]
   setSelectedCoupon(coupon)
   // Always land on Mystery Gift Box; keep every other page behavior unchanged.
-    const targetAngle = (360 - ((wheelRotation + winningIndex * 40 + 20) % 360)) % 360
+    const targetAngle = (360 - ((wheelRotation + winningIndex * 40 + 40) % 360)) % 360
     const targetRotation = wheelRotation + 1440 + targetAngle
     setIsSpinning(true)
     // Show the Namaste message immediately when the user taps Spin and keep it
