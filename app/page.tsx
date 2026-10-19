@@ -12,7 +12,7 @@ const slices = [
   { label: 'IRON', color: '#203d5c', text: '#fff', image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-NbjGQtdLcKeURAlIBAlnYaOCH1ylCf.png' },
   { label: 'SPEAKER', color: '#172d46', text: '#d8f3ff', image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-UVTo11cAsh3VN93kdOY2Ne5i0VZpcO.png' },
   { label: 'LED\nTV', color: '#27324a', text: '#ffe7a0', image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-MjN9YCU7k2Aw3CtH15qtK4YdTjmuAk.png' },
-  { label: 'MYSTERY\nGIFT BOX', color: '#6f4d12', text: '#fff4c4', image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-KcoV73E6OgqX0I5wn1Lp8sid5OjxgH.png' },
+  { label: 'MYSTERY\nGIFT BOX', color: '#8a5a08', text: '#fff4c4', image: '/images/gift-box-replacement.png' },
 ]
 
 function BrandMark() {
