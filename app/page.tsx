@@ -6,7 +6,7 @@ import { ArrowRight, Copy, Gift, LayoutDashboard, Link2, Mail, MessageCircle, Mo
 const slices = [
   { label: 'HEADPHONES', color: '#18243d', text: '#f6d77a', image: '/images/headphones-wheel-replacement.png' },
   { label: 'MIXER\nGRINDER', color: '#263a58', text: '#fff', image: '/images/mixer-grinder-wheel-replacement.png' },
-  { label: 'AIR\nCONDITIONER', color: '#123f52', text: '#d8f3ff', image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-dHY5yk3jvMTkV67M4MdHk5kgLfJeOD.png' },
+  { label: 'AIR\nCONDITIONER', color: '#123f52', text: '#d8f3ff', image: '/images/air-conditioner-wheel-replacement.png' },
   { label: 'REFRIGERATOR', color: '#1b2938', text: '#fff', image: '/images/refrigerator-wheel-replacement.png' },
   { label: 'WASHING\nMACHINE', color: '#34425a', text: '#fff0bc', image: '/images/washing-machine-wheel-replacement.png' },
   { label: 'IRON', color: '#203d5c', text: '#fff', image: '/images/iron-wheel-replacement.png' },
