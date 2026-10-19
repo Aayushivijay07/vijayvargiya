@@ -255,9 +255,9 @@ h1 span, h1 em { display: block; }
   .coupon-popup h2 { font-size: 24px; line-height: 1.05; }
   .coupon-unlocked { font-size: 10px; letter-spacing: .08em; }
   .coupon-value { font-size: 20px; }
-  .coupon-code { display: flex; align-items: center; justify-content: center; gap: 7px; padding: 8px 10px; }
+  .coupon-code { display: flex; align-items: center; justify-content: center; gap: 7px; min-height: 48px; padding: 10px 12px; text-align: center; }
   .coupon-code span { flex: 0 0 auto; }
-  .coupon-code strong { font-size: 14px; overflow-wrap: anywhere; }
+  .coupon-code strong { font-size: 16px; line-height: 1.1; overflow-wrap: anywhere; }
   .coupon-code button { flex: 0 0 auto; min-width: 54px; }
   .coupon-terms { font-size: 10px; line-height: 1.35; }
   .coupon-claim-link { min-height: 42px; font-size: 12px; }
