@@ -246,8 +246,8 @@ h1 span, h1 em { display: block; }
   article#rewards.reward-card .reward-highlight button { width: 24px; height: 24px; }
   article#rewards.reward-card .coupon-code { gap: 6px; margin-top: 8px; padding: 7px 9px; font-size: 9px; }
  article#rewards.reward-card .coupon-code strong { font-size: 11px; }
-  .coupon-overlay { padding: 10px; }
-  .coupon-popup { width: min(100%, 312px); max-height: calc(100vh - 20px); padding: 28px 16px 18px; border-radius: 18px; }
+  .coupon-overlay { width: 100%; padding: 10px; box-sizing: border-box; overflow-x: hidden; }
+  .coupon-popup { box-sizing: border-box; width: min(100%, calc(100vw - 20px)); max-width: 100%; max-height: calc(100vh - 20px); margin: 0 auto; padding: 28px 12px 18px; border-radius: 18px; overflow-x: hidden; }
   .coupon-popup .review-close { top: 8px; right: 8px; width: 30px; height: 30px; }
   .coupon-brand { font-size: 9px; letter-spacing: .12em; }
   .coupon-gift-art { height: 62px; }
