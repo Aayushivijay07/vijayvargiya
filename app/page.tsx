@@ -48,7 +48,7 @@ function PrizeWheel({ rotation, onSpin, isSpinning }: { rotation: number; onSpin
           </div>
         ))}
         <div className="wheel-labels" aria-hidden="true">
-          {slices.map((slice, index) => <span className="wheel-label" key={slice.label} style={{ transform: `rotate(${index * 40 + 20}deg) translateY(max(-175px, -30vw)) rotate(${-(index * 40 + 20)}deg)`, color: slice.text }}><img src={slice.image} alt="" /><b>{slice.label.split('\n').map((line) => <span key={line}>{line}</span>)}</b></span>)}
+          {slices.map((slice, index) => <span className="wheel-label" key={slice.label} style={{ transform: `rotate(${index * 40 + 20}deg) translateY(max(-168px, -29vw)) rotate(${-(index * 40 + 20)}deg)`, color: slice.text }}><img src={slice.image} alt="" /><b>{slice.label.split('\n').map((line) => <span key={line}>{line}</span>)}</b></span>)}
         </div>
         <div className="wheel-center" style={{ transform: `rotate(${45 - rotation}deg)` }}><strong style={{ display: 'inline-block', transform: `rotate(${rotation - 45}deg)` }}>VE</strong></div>
       </div>
