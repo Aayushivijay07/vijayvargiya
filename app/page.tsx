@@ -116,7 +116,7 @@ export default function Page() {
     couponCelebrationTimer.current = window.setTimeout(() => {
       audio.pause()
       audio.currentTime = 0
-    }, 5000)
+    }, 6500)
     return () => {
       audio.pause()
       audio.currentTime = 0
