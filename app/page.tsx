@@ -104,7 +104,7 @@ export default function Page() {
     }
   }, [])
 
-  const googleSheetWebAppUrl = 'https://script.google.com/macros/s/AKfycbwIx8d0nkp0QSOSmQp54Ztm_04Qg10jztTJoMy6ujlW-3Fiiv-oGeLATMMczUIDEHkWAw/exec'
+  const googleSheetWebAppUrl = 'https://script.google.com/macros/s/AKfycbwzr76jFCBsMPCTysduHm-nKPP5UC_0PS2eF0E-4O9m6wyMIMNinvTOY3sSOnMojQu_Mg/exec'
   const homeReferralUrl = typeof window === 'undefined' ? 'https://vijayavargiya.in/?ref=REWARDS25' : `${window.location.origin}/?ref=REWARDS25`
   const homePromotionalMessage = `SPIN & WIN at Vijayvargiya Electronics! Register using my referral link and get a FREE SPIN. Win exciting coupons, gifts and grand prizes like LED TV, Washing Machine and FREE AC. Register now and try your luck: ${homeReferralUrl}`
 
@@ -358,8 +358,8 @@ export default function Page() {
       await fetch(googleSheetWebAppUrl, {
         method: 'POST',
         mode: 'no-cors',
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8' },
-        body: new URLSearchParams({ name, mobile, registeredAt: new Date().toISOString() }).toString(),
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name, mobile, registeredAt: new Date().toISOString() }),
       })
     } catch {
       // Registration stays unlocked; the Apps Script request can be retried by the user.

@@ -59,11 +59,11 @@ function DashboardContent() {
       return
     }
     try {
-      await fetch('https://script.google.com/macros/s/AKfycbwIx8d0nkp0QSOSmQp54Ztm_04Qg10jztTJoMy6ujlW-3Fiiv-oGeLATMMczUIDEHkWAw/exec', {
+      await fetch('https://script.google.com/macros/s/AKfycbwzr76jFCBsMPCTysduHm-nKPP5UC_0PS2eF0E-4O9m6wyMIMNinvTOY3sSOnMojQu_Mg/exec', {
         method: 'POST',
         mode: 'no-cors',
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8' },
-        body: new URLSearchParams({ action: 'update', name, mobile, previousName: customerName, previousMobile: customerMobile }).toString(),
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ action: 'update', name, mobile, previousName: customerName, previousMobile: customerMobile }),
       })
       setProfileMessage('Profile updated. Your Google Sheet will be updated.')
       setProfileEditOpen(false)
