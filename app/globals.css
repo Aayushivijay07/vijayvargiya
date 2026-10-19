@@ -255,10 +255,10 @@ h1 span, h1 em { display: block; }
   .coupon-popup h2 { font-size: 24px; line-height: 1.05; }
   .coupon-unlocked { font-size: 10px; letter-spacing: .08em; }
   .coupon-value { font-size: 20px; }
-  .coupon-code { display: flex; width: 100%; max-width: 100%; box-sizing: border-box; align-items: center; justify-content: center; gap: 6px; min-height: 48px; padding: 10px 8px; text-align: center; overflow: hidden; }
-  .coupon-code span { flex: 0 0 auto; white-space: nowrap; }
-  .coupon-code strong { min-width: 0; flex: 1 1 auto; font-size: 16px; line-height: 1.1; overflow-wrap: anywhere; }
-  .coupon-code button { flex: 0 0 auto; min-width: 50px; padding-inline: 8px; }
+  .coupon-code { display: flex; width: 100%; max-width: 100%; box-sizing: border-box; align-items: center; justify-content: center; gap: 5px; min-height: 42px; padding: 7px 6px; text-align: center; overflow: hidden; }
+  .coupon-code span { flex: 0 0 auto; white-space: nowrap; font-size: 9px; }
+  .coupon-code strong { min-width: 0; flex: 1 1 auto; font-size: 13px; line-height: 1.1; overflow-wrap: anywhere; }
+  .coupon-code button { flex: 0 0 auto; min-width: 44px; padding: 5px 6px; font-size: 10px; }
   .coupon-terms { font-size: 10px; line-height: 1.35; }
   .coupon-claim-link { min-height: 42px; font-size: 12px; }
   article#rewards.reward-card .coupon-code button { width: 22px; height: 22px; }
