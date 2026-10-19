@@ -5,10 +5,10 @@ import { ArrowRight, Copy, Gift, LayoutDashboard, Link2, Mail, MessageCircle, Mo
 
 const slices = [
   { label: 'HEADPHONES', color: '#18243d', text: '#f6d77a', image: '/images/headphones-wheel-replacement.png' },
-  { label: 'MIXER\nGRINDER', color: '#263a58', text: '#fff', image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-zCPzlaBXQBH6jeUvx3ouPYtS8MQ32j.png' },
+  { label: 'MIXER\nGRINDER', color: '#263a58', text: '#fff', image: '/images/mixer-grinder-wheel-replacement.png' },
   { label: 'AIR\nCONDITIONER', color: '#123f52', text: '#d8f3ff', image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-dHY5yk3jvMTkV67M4MdHk5kgLfJeOD.png' },
   { label: 'REFRIGERATOR', color: '#1b2938', text: '#fff', image: '/images/refrigerator-wheel-replacement.png' },
-  { label: 'WASHING\nMACHINE', color: '#34425a', text: '#fff0bc', image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-L7RCVaOVxycZaxrm3kmdATKzGugrhN.png' },
+  { label: 'WASHING\nMACHINE', color: '#34425a', text: '#fff0bc', image: '/images/washing-machine-wheel-replacement.png' },
   { label: 'IRON', color: '#203d5c', text: '#fff', image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-NbjGQtdLcKeURAlIBAlnYaOCH1ylCf.png' },
   { label: 'SPEAKER', color: '#172d46', text: '#d8f3ff', image: '/images/speaker-wheel-replacement.png' },
   { label: 'LED\nTV', color: '#8a5a08', text: '#ffe7a0', image: '/images/led-tv-wheel-replacement.png' },
