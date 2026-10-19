@@ -371,8 +371,8 @@ export default function Page() {
       await fetch(googleSheetWebAppUrl, {
         method: 'POST',
         mode: 'no-cors',
-        headers: { 'Content-Type': 'text/plain;charset=utf-8' },
-        body: JSON.stringify({ name, mobile, registeredAt: new Date().toISOString() }),
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8' },
+        body: new URLSearchParams({ name, mobile, registeredAt: new Date().toISOString() }).toString(),
       })
     } catch {
       // Registration stays unlocked; the Apps Script request can be retried by the user.
