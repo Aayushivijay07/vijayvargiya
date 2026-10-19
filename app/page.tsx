@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from 'react'
 import { ArrowRight, Copy, Gift, LayoutDashboard, Link2, Mail, MessageCircle, Monitor, MoreHorizontal, Send, Share2, Sparkles, Ticket, Users, X } from 'lucide-react'
 
 const slices = [
-  { label: 'HEADPHONES', color: '#18243d', text: '#f6d77a', image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-Q5YCTnh8vdaQ8Uq7R8MmCYqGIEfTzV.png' },
+  { label: 'HEADPHONES', color: '#18243d', text: '#f6d77a', image: '/images/headphones-wheel-replacement.png' },
   { label: 'MIXER\nGRINDER', color: '#263a58', text: '#fff', image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-zCPzlaBXQBH6jeUvx3ouPYtS8MQ32j.png' },
   { label: 'AIR\nCONDITIONER', color: '#123f52', text: '#d8f3ff', image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-dHY5yk3jvMTkV67M4MdHk5kgLfJeOD.png' },
   { label: 'REFRIGERATOR', color: '#1b2938', text: '#fff', image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-T0FiD0VHsFgO8FagJTUb3Ieh9lcSJi.png' },
