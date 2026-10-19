@@ -79,6 +79,8 @@ export default function Page() {
   const reviewTabOpened = useRef(false)
   const reviewPageWasHidden = useRef(false)
   const reviewPageLostFocus = useRef(false)
+  const couponCelebrationAudio = useRef<HTMLAudioElement | null>(null)
+  const couponCelebrationTimer = useRef<number | null>(null)
 
   useEffect(() => {
     const revealCouponAfterReturn = () => {
@@ -103,6 +105,25 @@ export default function Page() {
       document.removeEventListener('visibilitychange', handleVisibilityChange)
     }
   }, [])
+
+  useEffect(() => {
+    if (!showCouponPopup) return
+    const audio = new Audio('/audio/coupon-celebration.mp3')
+    audio.currentTime = 0
+    audio.volume = 0.78
+    couponCelebrationAudio.current = audio
+    void audio.play().catch(() => {})
+    couponCelebrationTimer.current = window.setTimeout(() => {
+      audio.pause()
+      audio.currentTime = 0
+    }, 6500)
+    return () => {
+      audio.pause()
+      audio.currentTime = 0
+      if (couponCelebrationTimer.current !== null) window.clearTimeout(couponCelebrationTimer.current)
+      couponCelebrationAudio.current = null
+    }
+  }, [showCouponPopup])
 
   const googleSheetWebAppUrl = 'https://script.google.com/macros/s/AKfycbwzr76jFCBsMPCTysduHm-nKPP5UC_0PS2eF0E-4O9m6wyMIMNinvTOY3sSOnMojQu_Mg/exec'
   const homeReferralUrl = typeof window === 'undefined' ? 'https://vijayavargiya.in/?ref=REWARDS25' : `${window.location.origin}/?ref=REWARDS25`
