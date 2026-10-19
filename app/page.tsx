@@ -7,7 +7,7 @@ const slices = [
   { label: 'HEADPHONES', color: '#18243d', text: '#f6d77a', image: '/images/headphones-wheel-replacement.png' },
   { label: 'MIXER\nGRINDER', color: '#263a58', text: '#fff', image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-zCPzlaBXQBH6jeUvx3ouPYtS8MQ32j.png' },
   { label: 'AIR\nCONDITIONER', color: '#123f52', text: '#d8f3ff', image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-dHY5yk3jvMTkV67M4MdHk5kgLfJeOD.png' },
-  { label: 'REFRIGERATOR', color: '#1b2938', text: '#fff', image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-T0FiD0VHsFgO8FagJTUb3Ieh9lcSJi.png' },
+  { label: 'REFRIGERATOR', color: '#1b2938', text: '#fff', image: '/images/refrigerator-wheel-replacement.png' },
   { label: 'WASHING\nMACHINE', color: '#34425a', text: '#fff0bc', image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-L7RCVaOVxycZaxrm3kmdATKzGugrhN.png' },
   { label: 'IRON', color: '#203d5c', text: '#fff', image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-NbjGQtdLcKeURAlIBAlnYaOCH1ylCf.png' },
   { label: 'SPEAKER', color: '#172d46', text: '#d8f3ff', image: '/images/speaker-wheel-replacement.png' },
