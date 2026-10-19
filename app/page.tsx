@@ -70,7 +70,6 @@ export default function Page() {
   const [showReviewPopup, setShowReviewPopup] = useState(false)
   const [showResultPopup, setShowResultPopup] = useState(false)
   const [showCouponPopup, setShowCouponPopup] = useState(false)
-  const [fireworksActive, setFireworksActive] = useState(false)
   const [couponCopied, setCouponCopied] = useState(false)
   const [selectedCoupon, setSelectedCoupon] = useState('')
   const [lastWinningIndex, setLastWinningIndex] = useState<number | null>(null)
@@ -145,9 +144,6 @@ export default function Page() {
   reviewPageWasHidden.current = false
   reviewPageLostFocus.current = false
   setShowReviewPopup(false)
-  setFireworksActive(true)
-  playCrackerSound()
-  window.setTimeout(() => setFireworksActive(false), 6000)
   setShowCouponPopup(true)
   }
 
@@ -155,15 +151,6 @@ export default function Page() {
     document.getElementById('prizes')?.scrollIntoView({ behavior: 'smooth', block: 'center' })
   }
 
-  function playCrackerSound() {
-    const fireworksAudio = new Audio('/fireworks.mp3')
-    fireworksAudio.volume = 0.85
-    void fireworksAudio.play().catch(() => undefined)
-    window.setTimeout(() => {
-      fireworksAudio.pause()
-      fireworksAudio.currentTime = 0
-    }, 6000)
-  }
 
   function spinWheel() {
     if (!isRegistered) {
@@ -298,7 +285,7 @@ export default function Page() {
       </footer>
 
       {showCouponPopup && <div className="review-overlay coupon-overlay">
-    <div className={`coupon-popup${fireworksActive ? ' fireworks-active' : ''}`} role="dialog" aria-modal="true" aria-labelledby="coupon-title">
+    <div className={`coupon-popup`} role="dialog" aria-modal="true" aria-labelledby="coupon-title">
       <button className="review-close" onClick={() => setShowCouponPopup(false)} aria-label="Close coupon offer"><X size={18} /></button>
       <div className="coupon-brand">VIJAYVARGIYA ELECTRONICS</div>
 <div className="coupon-gift-art"><img src="/images/wheel-mystery-gift.png" alt="Mystery gift box" /></div>
@@ -312,7 +299,7 @@ export default function Page() {
     </div>
   </div>}
 
-  {showResultPopup && lastWinningIndex !== null && <div className={`review-popup result-popup${fireworksActive ? ' fireworks-active' : ''}`} role="dialog" aria-modal="true" aria-labelledby="result-title">
+  {showResultPopup && lastWinningIndex !== null && <div className={`review-popup result-popup`} role="dialog" aria-modal="true" aria-labelledby="result-title">
         <button className="review-close" onClick={() => setShowResultPopup(false)} aria-label="Close winning result"><X size={18} /></button>
         <div className="review-badge">WIN</div>
         <h2 id="result-title">Congratulations!</h2>
@@ -324,7 +311,7 @@ export default function Page() {
 
       {showReviewPopup && (
         <div className="review-overlay">
-        <div className={`review-popup${fireworksActive ? ' fireworks-active' : ''}`} role="dialog" aria-modal="true" aria-labelledby="review-title">
+        <div className={`review-popup`} role="dialog" aria-modal="true" aria-labelledby="review-title">
         <div className="review-popup-content">
         <button className="review-close" onClick={finishReviewAndShowOffer} aria-label="Close review message"><X size={18} /></button>
  <h2 id="review-title">Namaste! Aapka Pyaar, Hamare 25 Saal Ke Safar Ki Sabse Badi Jeet!</h2>
