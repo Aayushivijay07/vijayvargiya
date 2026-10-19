@@ -36,7 +36,8 @@ nav a:hover { color: #ffc943; }
 .eyebrow { width: fit-content; display: flex; align-items: center; gap: 9px; padding: 9px 20px; border: 1px solid #8d5f00; border-radius: 999px; color: #ffc43c; font: 700 13px/1 monospace; letter-spacing: .22em; }
 .hero-copy > h1 { margin: 35px 0 28px; font-family: 'Bodoni Moda', 'Playfair Display', Georgia, 'Times New Roman', serif !important; font-size: clamp(86px, 8vw, 122px); font-weight: 500; line-height: .84; letter-spacing: -.07em; font-optical-sizing: auto; font-kerning: normal; text-rendering: geometricPrecision; }
 h1 span, h1 em { display: block; }
-h1 em { color: #ffd04a; font-style: normal; }
+.hero-copy > h1 span, .hero-copy > h1 em { font-style: italic; }
+ h1 em { color: #ffd04a; }
 .hero-copy p { max-width: 680px; color: #9bb6dd; font-size: 21px; line-height: 1.55; margin: 0; }
 .hero-actions { display: flex; align-items: center; gap: 20px; margin-top: 46px; }
 .primary-action, .secondary-action { min-height: 67px; padding: 0 36px; display: inline-flex; align-items: center; justify-content: center; gap: 15px; text-decoration: none; font-size: 20px; }
