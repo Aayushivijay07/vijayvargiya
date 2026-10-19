@@ -10,7 +10,7 @@ const slices = [
   { label: 'REFRIGERATOR', color: '#1b2938', text: '#fff', image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-T0FiD0VHsFgO8FagJTUb3Ieh9lcSJi.png' },
   { label: 'WASHING\nMACHINE', color: '#34425a', text: '#fff0bc', image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-L7RCVaOVxycZaxrm3kmdATKzGugrhN.png' },
   { label: 'IRON', color: '#203d5c', text: '#fff', image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-NbjGQtdLcKeURAlIBAlnYaOCH1ylCf.png' },
-  { label: 'SPEAKER', color: '#172d46', text: '#d8f3ff', image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-UVTo11cAsh3VN93kdOY2Ne5i0VZpcO.png' },
+  { label: 'SPEAKER', color: '#172d46', text: '#d8f3ff', image: '/images/speaker-wheel-replacement.png' },
   { label: 'LED\nTV', color: '#8a5a08', text: '#ffe7a0', image: '/images/led-tv-wheel-replacement.png' },
   { label: 'MYSTERY\nGIFT BOX', color: '#27324a', text: '#fff4c4', image: '/images/gift-box-replacement.png' },
 ]
