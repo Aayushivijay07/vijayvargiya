@@ -245,7 +245,22 @@ h1 span, h1 em { display: block; }
   article#rewards.reward-card .reward-highlight span { font-size: 9px; }
   article#rewards.reward-card .reward-highlight button { width: 24px; height: 24px; }
   article#rewards.reward-card .coupon-code { gap: 6px; margin-top: 8px; padding: 7px 9px; font-size: 9px; }
-  article#rewards.reward-card .coupon-code strong { font-size: 11px; }
+ article#rewards.reward-card .coupon-code strong { font-size: 11px; }
+  .coupon-overlay { padding: 10px; }
+  .coupon-popup { width: min(100%, 312px); max-height: calc(100vh - 20px); padding: 28px 16px 18px; border-radius: 18px; }
+  .coupon-popup .review-close { top: 8px; right: 8px; width: 30px; height: 30px; }
+  .coupon-brand { font-size: 9px; letter-spacing: .12em; }
+  .coupon-gift-art { height: 62px; }
+  .coupon-gift-art img { width: 72px; height: 58px; }
+  .coupon-popup h2 { font-size: 24px; line-height: 1.05; }
+  .coupon-unlocked { font-size: 10px; letter-spacing: .08em; }
+  .coupon-value { font-size: 20px; }
+  .coupon-code { grid-template-columns: 1fr auto; gap: 6px; padding: 8px 10px; }
+  .coupon-code span { grid-column: 1 / -1; }
+  .coupon-code strong { font-size: 14px; overflow-wrap: anywhere; }
+  .coupon-code button { min-width: 54px; }
+  .coupon-terms { font-size: 10px; line-height: 1.35; }
+  .coupon-claim-link { min-height: 42px; font-size: 12px; }
   article#rewards.reward-card .coupon-code button { width: 22px; height: 22px; }
   article#referrals.referral-card { width: 100%; min-height: 0; padding: 12px; }
   article#referrals.referral-card .card-heading h2 { font-size: 17px; }
