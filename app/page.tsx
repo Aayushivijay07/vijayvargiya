@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect, useRef, useState } from 'react'
+import { getReferralMessage, getReferralUrl } from '../lib/referral-share'
 import { ArrowRight, Copy, Gift, LayoutDashboard, Link2, Mail, MessageCircle, Monitor, MoreHorizontal, Send, Share2, Sparkles, Ticket, Users, X } from 'lucide-react'
 
 const slices = [
@@ -65,6 +66,7 @@ export default function Page() {
   const [isSpinning, setIsSpinning] = useState(false)
   const [spinCount, setSpinCount] = useState(0)
   const [referralCount, setReferralCount] = useState(0)
+  const [incomingReferralCode, setIncomingReferralCode] = useState('')
   const [spinResult, setSpinResult] = useState('')
   const [secondSpinNotice, setSecondSpinNotice] = useState('')
   const [showReviewPopup, setShowReviewPopup] = useState(false)
@@ -81,6 +83,11 @@ export default function Page() {
   const reviewPageLostFocus = useRef(false)
   const couponCelebrationAudio = useRef<HTMLAudioElement | null>(null)
   const couponCelebrationTimer = useRef<number | null>(null)
+
+  useEffect(() => {
+    const referralCode = new URLSearchParams(window.location.search).get('ref')?.trim()
+    if (referralCode) setIncomingReferralCode(referralCode)
+  }, [])
 
   useEffect(() => {
     const revealCouponAfterReturn = () => {
@@ -126,8 +133,9 @@ export default function Page() {
   }, [showCouponPopup])
 
   const googleSheetWebAppUrl = 'https://script.google.com/macros/s/AKfycbwzr76jFCBsMPCTysduHm-nKPP5UC_0PS2eF0E-4O9m6wyMIMNinvTOY3sSOnMojQu_Mg/exec'
-  const homeReferralUrl = typeof window === 'undefined' ? 'https://vijayavargiya.in/?ref=REWARDS25' : `${window.location.origin}/?ref=REWARDS25`
-  const homePromotionalMessage = `SPIN & WIN at Vijayvargiya Electronics! Register using my referral link and get a FREE SPIN. Win exciting coupons, gifts and grand prizes like LED TV, Washing Machine and FREE AC. Register now and try your luck: ${homeReferralUrl}`
+  const referralCode = 'REWARDS25'
+  const homeReferralUrl = getReferralUrl(referralCode)
+  const homePromotionalMessage = getReferralMessage(referralCode)
 
   function recordReferral() {
     setReferralCount((count) => Math.min(count + 1, 5))
@@ -380,7 +388,7 @@ export default function Page() {
         method: 'POST',
         mode: 'no-cors',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ name, mobile, registeredAt: new Date().toISOString() }),
+        body: JSON.stringify({ name, mobile, referralCode: incomingReferralCode || null, registeredAt: new Date().toISOString() }),
       })
     } catch {
       // Registration stays unlocked; the Apps Script request can be retried by the user.
