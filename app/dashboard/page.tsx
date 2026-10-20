@@ -1,7 +1,8 @@
 'use client'
 
 import { useSearchParams } from 'next/navigation'
-import { Suspense, useState } from 'react'
+import { Suspense, useEffect, useState } from 'react'
+import { getReferralMessage, getReferralUrl } from '../../lib/referral-share'
 import { ArrowUpRight, Copy, Gift, History, Link2, LogOut, Mail, Menu, MessageCircle, MoreHorizontal, Pencil, Send, Share2, Sparkles, Trophy, UserRound, X } from 'lucide-react'
 
 const spins = [
@@ -34,10 +35,13 @@ function DashboardContent() {
   const firstName = customerName.trim().split(/\s+/)[0] || 'Customer'
   const initials = customerName.trim().split(/\s+/).map((part) => part[0]).join('').slice(0, 2).toUpperCase() || 'C'
   const referralCode = firstName.toUpperCase().replace(/[^A-Z0-9]/g, '').slice(0, 8) || 'CUSTOMER'
-  const shareUrl = `${typeof window !== 'undefined' ? window.location.origin : ''}?ref=${encodeURIComponent(referralCode + '25')}`
-  const referralUrl = shareUrl
-  const referralLink = referralUrl
-  const promotionalMessage = `SPIN & WIN at Vijayvargiya Electronics! 🎁\n\n🔥 Register using my referral link and get a FREE SPIN! 🎡\n\n🎁 Win exciting coupons, amazing gifts & GRAND PRIZES like 📺 LED TV, 🧺 Washing Machine & ❄️ FREE AC!\n\n😍 Don’t miss your chance to win big! Share the excitement with your friends and family! 🎊\n\n👇 REGISTER NOW & TRY YOUR LUCK! 🍀\n🔗 ${referralUrl}`
+  const [referralUrl, setReferralUrl] = useState('')
+  const referralLink = referralUrl || 'Preparing referral link…'
+  const promotionalMessage = getReferralMessage(referralCode + '25')
+
+  useEffect(() => {
+    setReferralUrl(getReferralUrl(referralCode + '25'))
+  }, [referralCode])
   const shareText = promotionalMessage
 
   function openSharePopup() {

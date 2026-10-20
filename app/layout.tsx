@@ -8,6 +8,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'SPIN & WIN - Vijayvargiya Electronics',
     description: 'Register for a FREE SPIN and win exciting coupons, gifts, LED TV, Washing Machine, and FREE AC.',
+    url: 'https://vijayvargiya.vercel.app',
     siteName: 'Vijayvargiya Electronics',
     images: [{ url: '/images/wheel-mystery-gift.png', width: 512, height: 512, alt: 'Vijayvargiya Electronics Spin & Win rewards' }],
     locale: 'en_IN',

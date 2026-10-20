@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect, useRef, useState } from 'react'
+import { getReferralMessage, getReferralUrl } from '../lib/referral-share'
 import { ArrowRight, Copy, Gift, LayoutDashboard, Link2, Mail, MessageCircle, Monitor, MoreHorizontal, Send, Share2, Sparkles, Ticket, Users, X } from 'lucide-react'
 
 const slices = [
@@ -133,8 +134,8 @@ export default function Page() {
 
   const googleSheetWebAppUrl = 'https://script.google.com/macros/s/AKfycbwzr76jFCBsMPCTysduHm-nKPP5UC_0PS2eF0E-4O9m6wyMIMNinvTOY3sSOnMojQu_Mg/exec'
   const referralCode = 'REWARDS25'
-  const homeReferralUrl = `${typeof window !== 'undefined' ? window.location.origin : ''}?ref=${referralCode}`
-  const homePromotionalMessage = `SPIN & WIN at Vijayvargiya Electronics! Register using my referral link and get a FREE SPIN. Win exciting coupons, gifts and grand prizes like LED TV, Washing Machine and FREE AC. Register now and try your luck: ${homeReferralUrl}\n\n*_Grand Prize me TV, AC, Washing Machine - aisa mauka roz nahi milta, ek try toh banta hai yaar!_* 📺❄️🎁🔥`
+  const homeReferralUrl = getReferralUrl(referralCode)
+  const homePromotionalMessage = getReferralMessage(referralCode)
 
   function recordReferral() {
     setReferralCount((count) => Math.min(count + 1, 5))
