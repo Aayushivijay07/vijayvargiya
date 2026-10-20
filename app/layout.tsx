@@ -4,7 +4,17 @@ import './globals.css'
 
 export const metadata: Metadata = {
   title: 'Vijayvargiya Electronics Rewards',
-  description: 'Discover exclusive shopping coupons, electronics rewards, and premium grand prizes from Vijayvargiya Electronics.',
+  description: 'Spin & Win at Vijayvargiya Electronics. Register for a free spin and get a chance to win coupons, gifts, LED TV, Washing Machine, and FREE AC.',
+  metadataBase: new URL('https://vijayavargiya.in'),
+  openGraph: {
+    title: 'SPIN & WIN - Vijayvargiya Electronics',
+    description: 'Register for a FREE SPIN and win exciting coupons, gifts, LED TV, Washing Machine, and FREE AC.',
+    url: 'https://vijayavargiya.in/',
+    siteName: 'Vijayvargiya Electronics',
+    images: [{ url: '/images/wheel-mystery-gift.png', width: 512, height: 512, alt: 'Vijayvargiya Electronics Spin & Win rewards' }],
+    locale: 'en_IN',
+    type: 'website',
+  },
   generator: 'v0.app',
   icons: {
     icon: '/favicon.svg',

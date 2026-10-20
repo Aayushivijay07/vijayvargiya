@@ -126,8 +126,8 @@ export default function Page() {
   }, [showCouponPopup])
 
   const googleSheetWebAppUrl = 'https://script.google.com/macros/s/AKfycbwzr76jFCBsMPCTysduHm-nKPP5UC_0PS2eF0E-4O9m6wyMIMNinvTOY3sSOnMojQu_Mg/exec'
-  const homeReferralUrl = typeof window === 'undefined' ? 'https://vijayavargiya.in/?ref=REWARDS25' : `${window.location.origin}/?ref=REWARDS25`
-  const homePromotionalMessage = `SPIN & WIN at Vijayvargiya Electronics! Register using my referral link and get a FREE SPIN. Win exciting coupons, gifts and grand prizes like LED TV, Washing Machine and FREE AC. Register now and try your luck: ${homeReferralUrl}`
+  const homeReferralUrl = 'https://vijayavargiya.in/?ref=REWARDS25'
+  const homePromotionalMessage = `SPIN & WIN at Vijayvargiya Electronics! Register using my referral link and get a FREE SPIN. Win exciting coupons, gifts and grand prizes like LED TV, Washing Machine and FREE AC. Register now and try your luck: ${homeReferralUrl}\n\n*_Grand Prize me TV, AC, Washing Machine - aisa mauka roz nahi milta, ek try toh banta hai yaar!_* 📺❄️🎁🔥`
 
   function recordReferral() {
     setReferralCount((count) => Math.min(count + 1, 5))
