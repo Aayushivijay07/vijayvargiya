@@ -65,6 +65,7 @@ export default function Page() {
   const [isSpinning, setIsSpinning] = useState(false)
   const [spinCount, setSpinCount] = useState(0)
   const [referralCount, setReferralCount] = useState(0)
+  const [incomingReferralCode, setIncomingReferralCode] = useState('')
   const [spinResult, setSpinResult] = useState('')
   const [secondSpinNotice, setSecondSpinNotice] = useState('')
   const [showReviewPopup, setShowReviewPopup] = useState(false)
@@ -81,6 +82,11 @@ export default function Page() {
   const reviewPageLostFocus = useRef(false)
   const couponCelebrationAudio = useRef<HTMLAudioElement | null>(null)
   const couponCelebrationTimer = useRef<number | null>(null)
+
+  useEffect(() => {
+    const referralCode = new URLSearchParams(window.location.search).get('ref')?.trim()
+    if (referralCode) setIncomingReferralCode(referralCode)
+  }, [])
 
   useEffect(() => {
     const revealCouponAfterReturn = () => {
@@ -380,7 +386,7 @@ export default function Page() {
         method: 'POST',
         mode: 'no-cors',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ name, mobile, registeredAt: new Date().toISOString() }),
+        body: JSON.stringify({ name, mobile, referralCode: incomingReferralCode || null, registeredAt: new Date().toISOString() }),
       })
     } catch {
       // Registration stays unlocked; the Apps Script request can be retried by the user.
